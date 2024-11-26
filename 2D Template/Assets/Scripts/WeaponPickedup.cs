@@ -76,10 +76,10 @@ public class WeaponPickedup : MonoBehaviour
                     currentlyEquippedWeapon = newWeapon;
 
                     // Reset position and rotation relative to the WeaponHolder
-                    newWeaponTransform.localPosition = Vector3.zero; // Sets position to (0, 0, 0)
-                    newWeaponTransform.localRotation = Quaternion.identity; // Sets rotation to (0, 0, 0)
+                    newWeaponTransform.localPosition = new Vector3 (0.5f,0,0); // Sets position to (0, 0, 0)
+                    newWeaponTransform.localRotation = Quaternion.Euler(0,0,90); // Sets rotation to (0, 0, 0)
 
-                    //newWeapon.transform.GetComponent<Shooting>().enabled = true;
+                    newWeapon.transform.GetComponent<Shooting>().enabled = true;
 
                     Debug.Log(weaponName + " has been equipped and positioned!");
                 }
