@@ -77,7 +77,7 @@ public class WeaponPickedup : MonoBehaviour
 
                     // Reset position and rotation relative to the WeaponHolder
                     newWeaponTransform.localPosition = new Vector3 (0.5f,0,0); // Sets position to (0, 0, 0)
-                    newWeaponTransform.localRotation = Quaternion.Euler(0,0,90); // Sets rotation to (0, 0, 0)
+                    newWeaponTransform.localRotation = Quaternion.Euler(0,-180,0); // Sets rotation to (0, 0, 0)
 
                     newWeapon.transform.GetComponent<Shooting>().enabled = true;
 
