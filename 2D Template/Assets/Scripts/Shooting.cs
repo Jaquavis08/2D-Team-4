@@ -21,10 +21,10 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(BulletPrefab, FirePiont.position, FirePiont.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        GameObject Bullet = Instantiate(BulletPrefab, FirePiont.position, FirePiont.rotation);
+        Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePiont.up * bulletForce, ForceMode2D.Impulse);
-        StartCoroutine(ShootBullet(bullet));
+        StartCoroutine(ShootBullet(Bullet));
     }
 
     private IEnumerator ShootBullet(GameObject bullet)

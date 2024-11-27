@@ -64,7 +64,7 @@ Transform:
   m_Children:
   - {fileID: 4091092668000158629}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!212 &2839183558734299646
 SpriteRenderer:
@@ -157,5 +157,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePiont: {fileID: 4091092668000158629}
-  BulletPrefab: {fileID: 8443435967000490029, guid: 1422a64524777644a9990902fda53024, type: 3}
-  bulletForce: 20
+  BulletPrefab: {fileID: 8443435967000490029, guid: 51e21332328c06f41aa080507005f6dd, type: 3}
+  bulletForce: 35
