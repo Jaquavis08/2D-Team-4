@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Camera mainCamera;
 
     private SpriteRenderer spriteRenderer;
+    private SpriteRenderer weaponSpriteRenderer;
     public GameObject Weapon;
     private Rigidbody2D WeaponRb;
 
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         WeaponRb = Weapon.GetComponent<Rigidbody2D>();
         mainCamera = Camera.main;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        weaponSpriteRenderer = Weapon.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -31,7 +33,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement.x != 0)
         {
+            print(weaponSpriteRenderer);
             spriteRenderer.flipX = movement.x > 0;
+            weaponSpriteRenderer.flipY = movement.y > 0;
         }
 
         movement = movement.normalized;
