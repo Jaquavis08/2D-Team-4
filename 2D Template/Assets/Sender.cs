@@ -15,7 +15,7 @@ public class Sender : MonoBehaviour
     {
         if (collision.CompareTag("Player1"))
         {
-            DontDestroyOnLoad(collision.gameObject);
+            //DontDestroyOnLoad(collision.gameObject);
             if (SceneTp == true && PositionTp == true)
             {
                 Instantiate(gameObject, transform.position, Quaternion.identity);
