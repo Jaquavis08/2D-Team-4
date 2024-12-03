@@ -1029,6 +1029,7 @@ GameObject:
   - component: {fileID: 831696603}
   - component: {fileID: 831696602}
   - component: {fileID: 831696604}
+  - component: {fileID: 831696605}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -1096,7 +1097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831696600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -120.61, y: 44, z: 0}
+  m_LocalPosition: {x: -120.61, y: 43.2, z: 0}
   m_LocalScale: {x: 1, y: 3.2551, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1113,7 +1114,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1129,6 +1130,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &831696605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831696600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824fa99ead57124498f0ddb0c0b365c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneTp: 1
+  SceneName: Trail
+  PositionTp: 1
+  Position: {x: 0, y: 0, z: 0}
 --- !u!1 &836057873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,6 +2018,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4091092668000158629, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7726964200227220059, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2015,11 +2036,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7726964200227220059, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.3688
+      value: 8.42
       objectReference: {fileID: 0}
     - target: {fileID: 7726964200227220059, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1732
+      value: 4.21
       objectReference: {fileID: 0}
     - target: {fileID: 7726964200227220059, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
       propertyPath: m_LocalPosition.z
