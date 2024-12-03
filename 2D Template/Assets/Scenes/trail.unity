@@ -604,7 +604,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824fa99ead57124498f0ddb0c0b365c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneTp: 1
   SceneName: House
+  PositionTp: 1
+  Position: {x: 10, y: 0, z: 0}
 --- !u!212 &1317587012
 SpriteRenderer:
   m_ObjectHideFlags: 0
