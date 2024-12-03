@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Camera mainCamera;
 
     private SpriteRenderer spriteRenderer;
+    private SpriteRenderer weaponSpriteRenderer;
     public GameObject Weapon;
     private Rigidbody2D WeaponRb;
 
