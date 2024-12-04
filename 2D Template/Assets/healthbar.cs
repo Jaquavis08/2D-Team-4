@@ -4,12 +4,28 @@ using UnityEngine;
 
 public class healthbar : MonoBehaviour
 {
-    float life = 50;
+    public static healthbar Instance;
+
+    float life = 100;
     public float lifemax;
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(Player);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(Player);
+        }
     }
 
     // Update is called once per frame
@@ -20,9 +36,9 @@ public class healthbar : MonoBehaviour
     public void Hurt(float subtrahend)
     {
         life -= subtrahend;
-        if (life<0)
+        if (life < 0)
         {
-            life = 0;
+            Destroy(Player);
         }
     }
     public void Heal(float addend)

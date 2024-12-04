@@ -9,6 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     private Rigidbody2D rb;
     public float roatateSpeed = 0.0025f;
     private int EnemyChance;
+    public bool CanMove = true;
 
     private void Start()
     {
@@ -25,10 +26,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             RotateTowardsTarget();
         }
-
-
-
-
     }
 
     private void FixedUpdate()
@@ -50,13 +47,28 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (EnemyChance == 1 && GameObject.FindGameObjectWithTag("Player1"))
         {
-            target = GameObject.FindGameObjectWithTag("Player1").transform;
+            if(CanMove == true)
+            {
+                target = GameObject.FindGameObjectWithTag("Player1").transform;
+            }
+            else
+            {
+                target = null;
+            }
+            
         }
 
 
         else
         {
-            target = GameObject.FindGameObjectWithTag("Player1").transform;
+            if (CanMove == true)
+            {
+                target = GameObject.FindGameObjectWithTag("Player1").transform;
+            }
+            else
+            {
+                target = null;
+            }
         }
 
     }
@@ -64,15 +76,25 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player1"))
         {
-            Destroy(other.gameObject);
-            target = null;
+            CanMove = false;
+            GetTarget();
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            healthbar.Instance.Hurt(10);
+            StartCoroutine(Hit());
+            
+            
         }
 
+        IEnumerator Hit()
+        {
+            yield return new WaitForSeconds(0.1f);
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            CanMove = true;
+            GetTarget();
+        }
 
         if (other.gameObject.CompareTag("Bullet"))
         {
-
-            Destroy(other.gameObject);
             Destroy(gameObject);
         }
 
