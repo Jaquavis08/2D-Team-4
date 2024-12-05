@@ -2645,7 +2645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8461758255289583774, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
       propertyPath: bulletForce
-      value: 40
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8461758255289583774, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
       propertyPath: BulletAmount
@@ -2653,7 +2653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8461758255289583774, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
       propertyPath: BulletCooldown
-      value: 0.275555
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8461758255289583774, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
       propertyPath: MaxBulletCount
