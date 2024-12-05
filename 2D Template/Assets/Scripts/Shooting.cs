@@ -7,10 +7,12 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
 
+
     public Transform FirePiont;
     public GameObject BulletPrefab;
-    public int BulletAmount;
-    public int MaxBulletCount;
+    private int MagAmount;
+    public int MaxMagAmount;
+    public int Ammo;
     public float BulletCooldown;
     public float ReloadCooldown;
     public float bulletForce = 20f;
@@ -20,7 +22,7 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
-        BulletAmount = MaxBulletCount;
+        MagAmount = MaxMagAmount;
     }
     // Update is called once per frame
     void Update()
@@ -28,10 +30,10 @@ public class Shooting : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             if (canShoot)
-            StartCoroutine(ShootDelay());
+                StartCoroutine(ShootDelay());
         }
         
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && MagAmount < MaxMagAmount && Ammo > 0)
         {
             StartCoroutine(ReloadDelay());
         }
@@ -46,28 +48,33 @@ public class Shooting : MonoBehaviour
     private IEnumerator ShootDelay()
     {
         canShoot = false;
-        if (BulletAmount > 0)
+        if (MagAmount > 0)
         {
             isShooting = true;
-            BulletAmount -= 1;
+            MagAmount --;
             GameObject Bullet = Instantiate(BulletPrefab, FirePiont.position, FirePiont.rotation);
             Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(FirePiont.up * bulletForce, ForceMode2D.Impulse);
             StartCoroutine(ShootBullet(Bullet));
+            yield return new WaitForSeconds(BulletCooldown);
+            isShooting = false;
+            canShoot = true;
         }
-        if (BulletAmount < 0)
+        if (MagAmount < 0)
             canShoot = false;
-        yield return new WaitForSeconds(BulletCooldown);
-        isShooting = false;
-        canShoot = true;
     }
 
     private IEnumerator ReloadDelay()
     {
+        canShoot = false;
         yield return new WaitForSeconds(ReloadCooldown);
-        if(!isShooting)
+        if(isShooting == false)
         {
-            BulletAmount = MaxBulletCount;
+            int ammoNeeded = MaxMagAmount - MagAmount;
+
+            int ammoToReload = Mathf.Min(ammoNeeded, Ammo);
+            MagAmount += ammoToReload;
+            Ammo -= ammoToReload;
             canShoot = true;
         }
     }
