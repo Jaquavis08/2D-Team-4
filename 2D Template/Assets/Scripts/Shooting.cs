@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-
-
+    public static Shooting Instance;
     public Transform FirePiont;
     public GameObject BulletPrefab;
     private int MagAmount;
@@ -19,6 +18,18 @@ public class Shooting : MonoBehaviour
     private bool canShoot = true;
     private bool isShooting = false;
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -29,6 +40,8 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            if(MagAmount <= 0 && MagAmount < MaxMagAmount && Ammo > 0)
+                StartCoroutine(ReloadDelay());
             if (canShoot)
                 StartCoroutine(ShootDelay());
         }

@@ -21,6 +21,12 @@ public class WeaponPickedup : MonoBehaviour
 
             // Destroy(collision.gameObject);
         }
+
+        if (collision.CompareTag("Ammo"))
+        {
+            Shooting.Instance.Ammo += 15;
+            Destroy(collision.gameObject);
+        }
     }
 
     // Start is called before the first frame update
