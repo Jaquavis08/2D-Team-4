@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer weaponSpriteRenderer;
     public GameObject Weapon;
     private Rigidbody2D WeaponRb;
+    public Sprite PlayerBack;
+    public Sprite PlayerFront;
 
     void Start()
     {
@@ -33,6 +35,19 @@ public class PlayerMovement : MonoBehaviour
         if (movement.x != 0)
         {
             spriteRenderer.flipX = movement.x > 0;
+        }
+
+        if (movement.y != 0)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                spriteRenderer.sprite = PlayerBack;
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                spriteRenderer.sprite = PlayerFront;
+            }
         }
 
         movement = movement.normalized;
