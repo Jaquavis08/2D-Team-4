@@ -2558,15 +2558,19 @@ PrefabInstance:
     - target: {fileID: 1227077775690353, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
       propertyPath: PlayerBack
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: bd24904ce0e3d264e91c4868740740ad, type: 3}
     - target: {fileID: 1227077775690353, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
       propertyPath: PlayerFront
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 253d5e8f220c0b941a6ecc88862f3506, type: 3}
     - target: {fileID: 1303555623392958752, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1736432757836305310, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 253d5e8f220c0b941a6ecc88862f3506, type: 3}
     - target: {fileID: 7716323532453581486, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
       propertyPath: m_RootOrder
       value: 0
