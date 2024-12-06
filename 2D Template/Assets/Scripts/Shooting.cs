@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
     public static Shooting Instance;
     public Transform FirePiont;
     public GameObject BulletPrefab;
-    private int MagAmount;
+    public int MagAmount;
     public int MaxMagAmount;
     public int Ammo;
     public float BulletCooldown;
