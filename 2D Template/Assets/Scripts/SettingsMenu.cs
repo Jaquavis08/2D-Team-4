@@ -32,11 +32,11 @@ public class SettingsMenu : MonoBehaviour
             {
                 currentResolutionIndex = i;
             }
-        }    
+        }
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        resolutionDropdown.RefreshShownValue();  
     }
 
     public void SetVolume (float volume)

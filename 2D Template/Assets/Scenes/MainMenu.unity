@@ -4213,7 +4213,7 @@ MonoBehaviour:
       - m_Target: {fileID: 915628795}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5057,6 +5057,8 @@ MonoBehaviour:
     - m_Text: 1024 x 800
       m_Image: {fileID: 0}
     - m_Text: 1420 x 960
+      m_Image: {fileID: 0}
+    - m_Text: 1920 x 1080
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
