@@ -7,8 +7,10 @@ public class WeaponPickedup : MonoBehaviour
 {
     public GameObject WeaponHolder;
     public KeyCode Slot1 = KeyCode.Alpha1, Slot2 = KeyCode.Alpha2;
+    public GameObject GunUi;
+    public float EquipDelay;
 
-    private GameObject currentlyEquippedWeapon = null; // Tracks the equipped weapon
+    private GameObject currentlyEquippedWeapon = null;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Weapon"))
@@ -40,8 +42,7 @@ public class WeaponPickedup : MonoBehaviour
     {
         if (Input.GetKeyDown(Slot2))
         {
-            EquipWeapon("Gun");
-            //WeaponHolder.transform.Find("Gun").GetComponent<Shooting>().enabled = true;
+            StartCoroutine(EquipedDelayed());
         }
 
         if (Input.GetKeyDown(Slot1))
@@ -50,40 +51,76 @@ public class WeaponPickedup : MonoBehaviour
         }
     }
 
+    IEnumerator EquipedDelayed()
+    {
+        yield return new WaitForSeconds(EquipDelay);
+        EquipWeapon("Gun");
+        if(currentlyEquippedWeapon != null)
+        {
+            GunUi.SetActive(true);
+        }
+    }
+
+    private IEnumerator UnequipDelayed()
+    {
+        yield return new WaitForSeconds(EquipDelay);
+
+        if (currentlyEquippedWeapon != null)
+        {
+            
+            Shooting shooting = currentlyEquippedWeapon.GetComponent<Shooting>();
+            if (shooting != null)
+            {
+                shooting.StopAllCoroutines();
+                shooting.enabled = false; 
+            }
+
+            currentlyEquippedWeapon.SetActive(false);
+            Debug.Log(currentlyEquippedWeapon.name + " has been unequipped!");
+        }
+    }
+
     private void EquipWeapon(string weaponName)
     {
         if (WeaponHolder != null)
         {
-            // Find the new weapon by name
+            
             Transform newWeaponTransform = WeaponHolder.transform.Find(weaponName);
             if (newWeaponTransform != null)
             {
                 GameObject newWeapon = newWeaponTransform.gameObject;
 
-                // Check if it's already equipped
+                
                 if (currentlyEquippedWeapon == newWeapon)
                 {
-                    // Unequip if the same weapon is toggled
+                    
                     newWeapon.SetActive(false);
                     currentlyEquippedWeapon = null;
                     Debug.Log(weaponName + " has been unequipped!");
                 }
                 else
                 {
-                    // Unequip the current weapon, if any
+                    
                     if (currentlyEquippedWeapon != null)
                     {
-                        currentlyEquippedWeapon.SetActive(false);
-                        Debug.Log(currentlyEquippedWeapon.name + " has been unequipped!");
+                        StartCoroutine(UnequipDelayed());
                     }
 
-                    // Equip the new weapon
+                    
                     newWeapon.SetActive(true);
                     currentlyEquippedWeapon = newWeapon;
 
-                    // Reset position and rotation relative to the WeaponHolder
-                    newWeaponTransform.localPosition = new Vector3 (0.5f,0,0); // Sets position to (0, 0, 0)
-                    newWeaponTransform.localRotation = Quaternion.Euler(0,-180,0); // Sets rotation to (0, 0, 0)
+                   
+                    newWeaponTransform.localPosition = new Vector3 (0.5f,0,0);
+                    newWeaponTransform.localRotation = Quaternion.Euler(0,-180,0);
+
+
+                    Shooting shooting = newWeapon.GetComponent<Shooting>();
+                    if (shooting != null)
+                    {
+                        shooting.enabled = true;
+                        shooting.ResetState();
+                    }
 
                     newWeapon.transform.GetComponent<Shooting>().enabled = true;
 

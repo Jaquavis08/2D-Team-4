@@ -17,6 +17,7 @@ public class Shooting : MonoBehaviour
     public float bulletForce = 20f;
     private bool canShoot = true;
     private bool isShooting = false;
+    public string GunName = "Gun";
 
     private void Awake()
     {
@@ -91,5 +92,12 @@ public class Shooting : MonoBehaviour
             canShoot = true;
         }
     }
+    public void ResetState()
+    {
+        StopAllCoroutines();
+        canShoot = true;
+        isShooting = false;
+    }
+
 
 }
