@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class healthbar : MonoBehaviour
 {
     public static healthbar Instance;
 
-    float life = 100;
+    public float life;
     public float lifemax;
     public GameObject Player;
+    public Slider slider;
     // Start is called before the first frame update
     void Start()
     {
-        
+        life = lifemax;
     }
 
     private void Awake()
@@ -31,7 +33,9 @@ public class healthbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         transform.GetChild(0).localScale = new Vector3(life / lifemax,1,1);
+        //this.GetComponent<Slider>().value = new Vector3 (life / lifemax,1,1);
     }
     public void Hurt(float subtrahend)
     {
