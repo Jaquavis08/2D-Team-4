@@ -11,18 +11,25 @@ public class WeaponPickedup : MonoBehaviour
     public float EquipDelay;
 
     private GameObject currentlyEquippedWeapon = null;
+
+    // Pickup //
+    public float Range;
+    public KeyCode Pickup = KeyCode.E;
+    private GameObject WeaponInRange;
+    public GameObject pickupUIPrompt;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Weapon"))
-        {
-            Debug.Log("Weapon picked up: " + collision.gameObject.name);
+        //if (collision.CompareTag("Weapon"))
+        //{
+        //    Debug.Log("Weapon picked up: " + collision.gameObject.name);
 
-            collision.transform.SetParent(WeaponHolder.transform);
-            collision.GetComponent<BoxCollider2D>().enabled = false;
-            collision.gameObject.SetActive(false);
+        //    collision.transform.SetParent(WeaponHolder.transform);
+        //    collision.GetComponent<BoxCollider2D>().enabled = false;
+        //    collision.gameObject.SetActive(false);
 
-            // Destroy(collision.gameObject);
-        }
+        //    // Destroy(collision.gameObject);
+        //}
 
         if (collision.CompareTag("Ammo"))
         {
@@ -31,15 +38,58 @@ public class WeaponPickedup : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    void CheckForWeapon()
+    {
+        GameObject[] weapons = GameObject.FindGameObjectsWithTag("Weapon");
+        WeaponInRange = null;
+        foreach (GameObject weapon in weapons)
+        {
+            float distance = Vector3.Distance(this.gameObject.transform.position, weapon.transform.position);
+
+            if (distance <= Range)
+            {
+                WeaponInRange = weapon;
+
+                if (pickupUIPrompt != null)
+                {
+                    pickupUIPrompt.SetActive(true);
+                    return;
+                }
+            }
+
+            if (pickupUIPrompt != null)
+            {
+                pickupUIPrompt.SetActive(false);
+            }
+        }
     }
+
+    void PickupWeapon()
+    {
+        WeaponInRange.transform.SetParent(WeaponHolder.transform);
+        WeaponInRange.GetComponent<BoxCollider2D>().enabled = false;
+        WeaponInRange.gameObject.SetActive(false);
+        Destroy(WeaponInRange.gameObject);
+        if (pickupUIPrompt != null)
+        {
+            pickupUIPrompt.SetActive(false);
+        }
+        WeaponInRange = null;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        CheckForWeapon();
+
+        if(WeaponInRange != null && Input.GetKeyDown(Pickup))
+        {
+            PickupWeapon();
+        }
+
+
         if (Input.GetKeyDown(Slot2))
         {
             StartCoroutine(EquipedDelayed());
@@ -49,6 +99,8 @@ public class WeaponPickedup : MonoBehaviour
         {
             EquipWeapon("Bat");
         }
+
+
     }
 
     IEnumerator EquipedDelayed()

@@ -2241,8 +2241,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 341471728}
     - target: {fileID: 203434568648232891, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
+      propertyPath: Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 203434568648232891, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
       propertyPath: EquipDelay
       value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 203434568648232891, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
+      propertyPath: pickupUIPrompt
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1303555623392958752, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
       propertyPath: m_Name
@@ -2970,6 +2978,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2839183558734299646, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4091092668000158629, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.5

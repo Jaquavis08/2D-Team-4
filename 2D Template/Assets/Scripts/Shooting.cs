@@ -19,6 +19,7 @@ public class Shooting : MonoBehaviour
     private bool isShooting = false;
     public string GunName = "Gun";
 
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
