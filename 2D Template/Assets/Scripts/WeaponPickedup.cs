@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class WeaponPickedup : MonoBehaviour
 {
@@ -31,11 +33,11 @@ public class WeaponPickedup : MonoBehaviour
         //    // Destroy(collision.gameObject);
         //}
 
-        if (collision.CompareTag("Ammo"))
-        {
-            Shooting.Instance.Ammo += 15;
-            Destroy(collision.gameObject);
-        }
+        //if (collision.CompareTag("Ammo"))
+        //{
+        //    Shooting.Instance.Ammo += 15;
+        //    Destroy(collision.gameObject);
+        //}
     }
 
 
@@ -47,12 +49,13 @@ public class WeaponPickedup : MonoBehaviour
         {
             float distance = Vector3.Distance(this.gameObject.transform.position, weapon.transform.position);
 
-            if (distance <= Range)
+            if (distance <= Range && !weapon.GetComponentInParent<PlayerMovement>())
             {
                 WeaponInRange = weapon;
 
                 if (pickupUIPrompt != null)
                 {
+                    pickupUIPrompt.GetComponent<TMP_Text>().SetText("Press [E] To Pick Up: " + weapon.name);
                     pickupUIPrompt.SetActive(true);
                     return;
                 }
@@ -67,11 +70,21 @@ public class WeaponPickedup : MonoBehaviour
 
     void PickupWeapon()
     {
-        WeaponInRange.transform.SetParent(WeaponHolder.transform);
-        WeaponInRange.GetComponent<BoxCollider2D>().enabled = false;
-        WeaponInRange.gameObject.SetActive(false);
-        Destroy(WeaponInRange.gameObject);
-        if (pickupUIPrompt != null)
+        if (WeaponInRange.name == "Pistol")
+        {
+            WeaponInRange.transform.SetParent(WeaponHolder.transform);
+            WeaponInRange.GetComponent<BoxCollider2D>().enabled = false;
+            WeaponInRange.gameObject.SetActive(false);
+        }
+
+        if (WeaponInRange.name == "Ammo")
+        {
+            Shooting.Instance.Ammo += 15;
+            Destroy(WeaponInRange.gameObject);
+        }
+
+            //Destroy(WeaponInRange.gameObject);
+            if (pickupUIPrompt != null)
         {
             pickupUIPrompt.SetActive(false);
         }
@@ -106,7 +119,7 @@ public class WeaponPickedup : MonoBehaviour
     IEnumerator EquipedDelayed()
     {
         yield return new WaitForSeconds(EquipDelay);
-        EquipWeapon("Gun");
+        EquipWeapon("Pistol");
         if(currentlyEquippedWeapon != null)
         {
             GunUi.SetActive(true);

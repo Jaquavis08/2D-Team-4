@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Transform child in Weapon.transform)
         {
-            Transform firepoint = Weapon.transform.Find("Gun").transform.Find("Firepoint");
+            Transform firepoint = Weapon.transform.Find("Pistol").transform.Find("Firepoint");
             SpriteRenderer renderer = child.GetComponent<SpriteRenderer>();
 
             if (Input.GetKey(KeyCode.W))
