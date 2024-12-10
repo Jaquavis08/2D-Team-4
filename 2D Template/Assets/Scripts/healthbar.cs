@@ -11,6 +11,7 @@ public class healthbar : MonoBehaviour
     public float life;
     public float lifemax;
     public GameObject Player;
+    public GameObject Pivot;
     //public Slider slider;
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,14 @@ public class healthbar : MonoBehaviour
         transform.GetChild(0).GetComponent<RectTransform>().localScale = new Vector3(life / lifemax,1,1);
 
         transform.GetChild(0).localScale = new Vector3(life / lifemax,1,1);
-        //this.GetComponent<Slider>().value = new Vector3 (life / lifemax,1,1);
+
+        if(life <= 60)
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                Pivot.transform.GetChild(i).GetComponent<Image>().color = Color.yellow;
+            }
+        }
     }
     public void Hurt(float subtrahend)
     {

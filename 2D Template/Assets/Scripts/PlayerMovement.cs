@@ -49,7 +49,12 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.sprite = PlayerFront;
         }
 
-        movement = movement.normalized;
+        //movement = movement.normalized;
+
+        if (movement.magnitude > 1)
+        {
+            movement = movement.normalized;
+        }
 
         RotateTowardsMouse();
     }
