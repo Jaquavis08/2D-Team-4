@@ -24,7 +24,7 @@ public class text : MonoBehaviour
         }
         if (index < input.Length == false)
         {
-            transform.parent.GetComponent<textbox>().MessageOver();
+            transform.parent.GetComponent<Textbox>().MessageOver();
         }
         if (timer == 0)
         {
