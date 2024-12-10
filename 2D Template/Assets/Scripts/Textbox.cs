@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class textbox : MonoBehaviour
+public class Textbox : MonoBehaviour
 {
     public RawImage looks;
     bool messageover = false;
@@ -18,7 +18,7 @@ public class textbox : MonoBehaviour
     {
 
     }
-    public void Textbox(string message)
+    public void textbox(string message)
     {
         looks.enabled = true;
         transform.GetChild(0).GetComponent<text>().Write(message, 5);
