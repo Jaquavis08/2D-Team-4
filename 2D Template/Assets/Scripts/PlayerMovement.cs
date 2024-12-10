@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Transform child in Weapon.transform)
         {
-            Transform firepoint = Weapon.transform.Find("Pistol").transform.Find("Firepoint");
+            Transform firepoint = Weapon.transform.Find("M1911").transform.Find("Firepoint");
             SpriteRenderer renderer = child.GetComponent<SpriteRenderer>();
 
             if (Input.GetKey(KeyCode.W))
@@ -97,11 +97,11 @@ public class PlayerMovement : MonoBehaviour
                 renderer.flipY = shouldFlip;
                 if (shouldFlip == true)
                 {
-                    firepoint.localPosition = new Vector3(-15.5f, -3.11f, firepoint.localPosition.z);
+                    firepoint.localPosition = new Vector3(-7.11f, -1.03f, firepoint.localPosition.z);
                 }
                 else
                 {
-                    firepoint.localPosition = new Vector3(-15.5f, 3.11f, firepoint.localPosition.z);
+                    firepoint.localPosition = new Vector3(-7.11f, 1.03f, firepoint.localPosition.z);
                 }
             }
         }

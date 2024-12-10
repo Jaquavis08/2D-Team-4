@@ -33,11 +33,12 @@ public class WeaponPickedup : MonoBehaviour
         //    // Destroy(collision.gameObject);
         //}
 
-        //if (collision.CompareTag("Ammo"))
-        //{
-        //    Shooting.Instance.Ammo += 15;
-        //    Destroy(collision.gameObject);
-        //}
+        if (collision.CompareTag("Weapon") && collision.name == "Ammo")
+        {
+            Shooting.Instance.Ammo += 15;
+            Destroy(collision.gameObject);
+            pickupUIPrompt.SetActive(false);
+        }
     }
 
 
@@ -70,7 +71,7 @@ public class WeaponPickedup : MonoBehaviour
 
     void PickupWeapon()
     {
-        if (WeaponInRange.name == "Pistol")
+        if (WeaponInRange.name == "M1911")
         {
             WeaponInRange.transform.SetParent(WeaponHolder.transform);
             WeaponInRange.GetComponent<BoxCollider2D>().enabled = false;
@@ -119,7 +120,7 @@ public class WeaponPickedup : MonoBehaviour
     IEnumerator EquipedDelayed()
     {
         yield return new WaitForSeconds(EquipDelay);
-        EquipWeapon("Pistol");
+        EquipWeapon("M1911");
         if(currentlyEquippedWeapon != null)
         {
             GunUi.SetActive(true);

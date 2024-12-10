@@ -22,7 +22,7 @@ public class GunUpdater : MonoBehaviour
     {
         if (WeaponHolder.GetComponentInChildren<Shooting>() != null)
         {
-            Name.text = WeaponHolder.GetComponentInChildren<Shooting>().GunName;
+            Name.text = WeaponHolder.GetComponentInChildren<Shooting>().name;
             MagAndAmmo.text = WeaponHolder.GetComponentInChildren<Shooting>().MagAmount + "/" + WeaponHolder.GetComponentInChildren<Shooting>().Ammo;
         }
         else

@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour
     public float bulletForce = 20f;
     private bool canShoot = true;
     private bool isShooting = false;
-    public string GunName = "Gun";
+    //public string GunName = "Gun";
 
 
     private void Awake()
