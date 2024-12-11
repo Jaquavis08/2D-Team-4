@@ -9,27 +9,19 @@ public class healthbar : MonoBehaviour
 {
     public static healthbar Instance;
 
-<<<<<<< HEAD
 
 
     float life;
-=======
 
-    public float life;
->>>>>>> 0cb4f39b6ed488e5fc4c1b1202898e74dd00aea6
     public float lifemax;
     public GameObject Player;
     public GameObject Pivot;
     public GameObject percent;
     public GameObject GameOver;
-    //public Slider slider;
-    // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
         life = 100;
         life = lifemax;
-=======
         GameOver.SetActive(false);
         life = 100;
         life = lifemax;
@@ -42,7 +34,6 @@ public class healthbar : MonoBehaviour
         Heal(5);
         StartCoroutine(PassiveHeal());
 
->>>>>>> 0cb4f39b6ed488e5fc4c1b1202898e74dd00aea6
     }
 
     private void Awake()
@@ -70,8 +61,6 @@ public class healthbar : MonoBehaviour
         transform.GetChild(0).GetComponent<RectTransform>().localScale = new Vector3(life / lifemax,1,1);
 
         transform.GetChild(0).localScale = new Vector3(life / lifemax,1,1);
-<<<<<<< HEAD
-=======
 
         if(IsMouseOverUI())
         {
@@ -120,7 +109,6 @@ public class healthbar : MonoBehaviour
             Time.timeScale = 1f;
             GameOver.SetActive(false);
         }
->>>>>>> 0cb4f39b6ed488e5fc4c1b1202898e74dd00aea6
     }
     public void Hurt(float subtrahend)
     {
