@@ -1,32 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
 
     private Vector2 movement;
     private Rigidbody2D rb;
     private Camera mainCamera;
 
     private SpriteRenderer spriteRenderer;
-    private SpriteRenderer weaponSpriteRenderer;
-    public GameObject Weapon;
-    private Rigidbody2D WeaponRb;
-    public Sprite PlayerBack;
-    public Sprite PlayerFront;
-    public GameObject PlayerGFX;
+    private GameObject equippedWeapon;
+    private Rigidbody2D weaponRb;
+    [SerializeField] private Sprite playerBack;
+    [SerializeField] private Sprite playerFront;
+    [SerializeField] private GameObject playerGFX;
+
+    [SerializeField] private Transform firepoint;
+    [SerializeField] private Vector3 firepointOffset = new Vector3(-7.11f, 1.03f, 0);
+    [SerializeField] private Vector3 firepointFlippedOffset = new Vector3(-7.11f, -1.03f, 0);
+
+    [SerializeField] private KeyCode moveUpKey = KeyCode.W;
+    [SerializeField] private KeyCode moveDownKey = KeyCode.S;
+
+    private Dictionary<KeyCode, int> sortingOrderMapping = new Dictionary<KeyCode, int>
+    {
+        { KeyCode.W, 0 },
+        { KeyCode.S, 1 }
+    };
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        WeaponRb = Weapon.GetComponent<Rigidbody2D>();
         mainCamera = Camera.main;
-        spriteRenderer = PlayerGFX.GetComponent<SpriteRenderer>();
+        spriteRenderer = playerGFX.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -34,23 +42,23 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+       
         if (movement.x != 0)
         {
             spriteRenderer.flipX = movement.x > 0;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        
+        if (Input.GetKey(moveUpKey))
         {
-            spriteRenderer.sprite = PlayerBack;
+            spriteRenderer.sprite = playerBack;
+        }
+        else if (Input.GetKey(moveDownKey))
+        {
+            spriteRenderer.sprite = playerFront;
         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            spriteRenderer.sprite = PlayerFront;
-        }
-
-        //movement = movement.normalized;
-
+       
         if (movement.magnitude > 1)
         {
             movement = movement.normalized;
@@ -63,8 +71,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = movement * moveSpeed;
     }
+
+    [SerializeField] private float weaponDistance = 1.5f;
+
     void RotateTowardsMouse()
     {
+        if (equippedWeapon == null) return;
+
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
 
@@ -72,46 +85,46 @@ public class PlayerMovement : MonoBehaviour
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // Set weapon position and rotation
-        Weapon.transform.position = new Vector2(rb.position.x, rb.position.y);
-        WeaponRb.rotation = angle;
+        // Set weapon position and rotation based on mouse direction and distance
+        equippedWeapon.transform.position = rb.position + (Vector2)(direction * weaponDistance);
+        weaponRb.rotation = angle;
 
-        // Check if the angle is between 90 and -90 degrees
         bool shouldFlip = angle > 90f || angle < -90f;
 
-        // Flip all child renderers of the weapon
-
-        foreach (Transform child in Weapon.transform)
+        // Get the weapon's SpriteRenderer
+        SpriteRenderer renderer = equippedWeapon.GetComponentInChildren<SpriteRenderer>();
+        if (renderer != null)
         {
-            Transform firepoint = Weapon.transform.Find("M1911").transform.Find("Firepoint");
-            SpriteRenderer renderer = child.GetComponent<SpriteRenderer>();
+            renderer.flipY = shouldFlip;
 
-            if (Input.GetKey(KeyCode.W))
+            // Adjust firepoint position
+            firepoint.localPosition = shouldFlip ? firepointFlippedOffset : firepointOffset;
+
+            // If facing backwards (W key), send the weapon behind the player by adjusting sorting order
+            if (Input.GetKeyDown(moveUpKey)) // Player is facing backwards
             {
-                renderer.sortingOrder = 0;
+                renderer.sortingOrder = -1;  // Weapon appears behind the player
             }
-
-            if (Input.GetKey(KeyCode.S))
-            { 
-                renderer.sortingOrder = 1;
-            }
-
-            if (renderer != null)
+            if(Input.GetKeyDown(moveDownKey)) // Player is facing forwards (S key)
             {
-
-                renderer.flipY = shouldFlip;
-                if (shouldFlip == true)
-                {
-                    firepoint.localPosition = new Vector3(-7.11f, -1.03f, firepoint.localPosition.z);
-                }
-                else
-                {
-                    firepoint.localPosition = new Vector3(-7.11f, 1.03f, firepoint.localPosition.z);
-                }
+                renderer.sortingOrder = 1;  // Weapon appears in front of the player
             }
         }
     }
-    public void physics()
+
+
+
+    public void SetEquippedWeapon(GameObject weapon)
+    {
+        equippedWeapon = weapon;
+        if (equippedWeapon != null)
+        {
+            weaponRb = equippedWeapon.GetComponent<Rigidbody2D>();
+            firepoint = equippedWeapon.transform.Find("Firepoint");
+        }
+    }
+
+    public void StopPhysics()
     {
         rb.velocity = Vector3.zero;
     }

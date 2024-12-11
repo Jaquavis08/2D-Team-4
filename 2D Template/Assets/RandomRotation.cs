@@ -12,7 +12,7 @@ public class RandomRotation : MonoBehaviour
     {
         Object = this.gameObject;
         ry = Random.Range(0, 360);
-        Object.transform.eulerAngles = new Vector3(Object.transform.rotation.x, Object.transform.rotation.z, ry * 2);
+        Object.transform.eulerAngles = new Vector3(Object.transform.rotation.x, Object.transform.rotation.z, ry * 1.65f);
     }
 
     // Update is called once per frame

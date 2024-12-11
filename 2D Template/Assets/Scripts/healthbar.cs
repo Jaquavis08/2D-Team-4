@@ -15,12 +15,23 @@ public class healthbar : MonoBehaviour
     public GameObject Player;
     public GameObject Pivot;
     public GameObject percent;
+    public GameObject GameOver;
     //public Slider slider;
     // Start is called before the first frame update
     void Start()
     {
+        GameOver.SetActive(false);
         life = 100;
         life = lifemax;
+        StartCoroutine(PassiveHeal());
+    }
+
+    IEnumerator PassiveHeal()
+    {
+        yield return new WaitForSeconds(5);
+        Heal(5);
+        StartCoroutine(PassiveHeal());
+
     }
 
     private void Awake()
@@ -85,6 +96,12 @@ public class healthbar : MonoBehaviour
                     Pivot.transform.GetChild(i).GetComponent<Image>().color = Color.red;
                 }
         }
+
+        if(life <= 0)
+        {
+            Time.timeScale = 0f;
+            GameOver.SetActive(true);
+        }
     }
     public void Hurt(float subtrahend)
     {
@@ -92,7 +109,8 @@ public class healthbar : MonoBehaviour
         if (life < 0)
         {
             life = 0;
-            Destroy(Player);
+            Time.timeScale = 0f;
+            GameOver.SetActive(true);
         }
     }
     public void Heal(float addend)

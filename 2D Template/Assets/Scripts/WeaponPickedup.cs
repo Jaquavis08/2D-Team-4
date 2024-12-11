@@ -1,206 +1,175 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class WeaponPickedup : MonoBehaviour
 {
     public GameObject WeaponHolder;
-    public KeyCode Slot1 = KeyCode.Alpha1, Slot2 = KeyCode.Alpha2;
+    public KeyCode[] weaponSlots = { KeyCode.Alpha1, KeyCode.Alpha2 };
     public GameObject GunUi;
-    public float EquipDelay;
+    public float EquipDelay = 0.5f;
 
     private GameObject currentlyEquippedWeapon = null;
 
-    // Pickup //
-    public float Range;
-    public KeyCode Pickup = KeyCode.E;
-    private GameObject WeaponInRange;
+    // Pickup Variables
+    public float Range = 5f;
+    public KeyCode PickupKey = KeyCode.E;
+    private GameObject weaponInRange;
     public GameObject pickupUIPrompt;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private PlayerMovement playerMovement;
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.CompareTag("Weapon"))
-        //{
-        //    Debug.Log("Weapon picked up: " + collision.gameObject.name);
-
-        //    collision.transform.SetParent(WeaponHolder.transform);
-        //    collision.GetComponent<BoxCollider2D>().enabled = false;
-        //    collision.gameObject.SetActive(false);
-
-        //    // Destroy(collision.gameObject);
-        //}
-
-        if (collision.CompareTag("Weapon") && collision.name == "Ammo")
+        if(collision.gameObject.name == "Ammo")
         {
-            Shooting.Instance.Ammo += Random.Range(10, 20);
-            Destroy(collision.gameObject);
-            pickupUIPrompt.SetActive(false);
+            Shooting.Instance.Ammo += Random.Range(5, 20);
+            Destroy(weaponInRange.gameObject);
         }
     }
 
+    void Start()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+    }
+
+    void Update()
+    {
+        CheckForWeapon();
+
+        // Handle pickup
+        if (weaponInRange != null && Input.GetKeyDown(PickupKey))
+        {
+            PickupWeapon();
+        }
+
+        // Handle weapon slot selection
+        for (int i = 0; i < weaponSlots.Length; i++)
+        {
+            if (Input.GetKeyDown(weaponSlots[i]))
+            {
+                EquipWeaponBySlot(i);
+            }
+        }
+    }
 
     void CheckForWeapon()
     {
         GameObject[] weapons = GameObject.FindGameObjectsWithTag("Weapon");
-        WeaponInRange = null;
+        weaponInRange = null;
+
         foreach (GameObject weapon in weapons)
         {
-            float distance = Vector3.Distance(this.gameObject.transform.position, weapon.transform.position);
+            float distance = Vector3.Distance(transform.position, weapon.transform.position);
 
-            if (distance <= Range && !weapon.GetComponentInParent<PlayerMovement>())
+            if (distance <= Range && weapon.transform.parent != WeaponHolder.transform)
             {
-                WeaponInRange = weapon;
+                weaponInRange = weapon;
 
                 if (pickupUIPrompt != null)
                 {
-                    pickupUIPrompt.GetComponent<TMP_Text>().SetText("Press [E] To Pick Up: " + weapon.name);
+                    pickupUIPrompt.GetComponent<TMP_Text>().SetText($"Press [E] To Pick Up: {weapon.name}");
                     pickupUIPrompt.SetActive(true);
-                    return;
                 }
+                return;
             }
+        }
 
-            if (pickupUIPrompt != null)
-            {
-                pickupUIPrompt.SetActive(false);
-            }
+        if (pickupUIPrompt != null)
+        {
+            pickupUIPrompt.SetActive(false);
         }
     }
 
     void PickupWeapon()
     {
-        if (WeaponInRange.name == "M1911")
-        {
-            WeaponInRange.transform.SetParent(WeaponHolder.transform);
-            WeaponInRange.GetComponent<BoxCollider2D>().enabled = false;
-            WeaponInRange.gameObject.SetActive(false);
-        }
+        if (weaponInRange == null) return;
 
-        if (WeaponInRange.name == "Ammo")
+        if(weaponInRange.name == "Ammo")
         {
             Shooting.Instance.Ammo += Random.Range(10, 20);
-            Destroy(WeaponInRange.gameObject);
+            Destroy(weaponInRange.gameObject);
+
+        }
+        if(weaponInRange.name != "Ammo")
+        {
+            weaponInRange.transform.SetParent(WeaponHolder.transform);
+            weaponInRange.GetComponent<BoxCollider2D>().enabled = false;
+            weaponInRange.gameObject.SetActive(false);
         }
 
-            //Destroy(WeaponInRange.gameObject);
-            if (pickupUIPrompt != null)
+        if (pickupUIPrompt != null)
         {
             pickupUIPrompt.SetActive(false);
         }
-        WeaponInRange = null;
+
+        weaponInRange = null;
     }
 
-
-    // Update is called once per frame
-    void Update()
+    void EquipWeaponBySlot(int slotIndex)
     {
-        CheckForWeapon();
+        if (slotIndex < 0 || slotIndex >= WeaponHolder.transform.childCount) return;
 
-        if(WeaponInRange != null && Input.GetKeyDown(Pickup))
+        Transform weaponTransform = WeaponHolder.transform.GetChild(slotIndex);
+        if (weaponTransform == null) return;
+
+        GameObject weapon = weaponTransform.gameObject;
+
+        if (currentlyEquippedWeapon == weapon)
         {
-            PickupWeapon();
+            StartCoroutine(UnequipWeapon());
         }
-
-
-        if (Input.GetKeyDown(Slot2))
+        else
         {
-            StartCoroutine(EquipedDelayed());
-        }
-
-        if (Input.GetKeyDown(Slot1))
-        {
-            EquipWeapon("Bat");
-        }
-
-
-    }
-
-    IEnumerator EquipedDelayed()
-    {
-        yield return new WaitForSeconds(EquipDelay);
-        EquipWeapon("M1911");
-        if(currentlyEquippedWeapon != null)
-        {
-            GunUi.SetActive(true);
+            StartCoroutine(EquipWeapon(weapon));
         }
     }
 
-    private IEnumerator UnequipDelayed()
+    IEnumerator EquipWeapon(GameObject weapon)
     {
         yield return new WaitForSeconds(EquipDelay);
 
         if (currentlyEquippedWeapon != null)
         {
-            
-            Shooting shooting = currentlyEquippedWeapon.GetComponent<Shooting>();
-            if (shooting != null)
-            {
-                shooting.StopAllCoroutines();
-                shooting.enabled = false; 
-            }
+            StartCoroutine(UnequipWeapon());
+        }
 
-            currentlyEquippedWeapon.SetActive(false);
-            Debug.Log(currentlyEquippedWeapon.name + " has been unequipped!");
+        weapon.SetActive(true);
+        currentlyEquippedWeapon = weapon;
+
+        playerMovement.SetEquippedWeapon(weapon);
+
+        weapon.transform.localPosition = new Vector3(0.5f, 0, 0);
+        weapon.transform.localRotation = Quaternion.Euler(0, -180, 0);
+
+        Shooting shooting = weapon.GetComponent<Shooting>();
+        if (shooting != null)
+        {
+            shooting.enabled = true;
+            shooting.ResetState();
+        }
+
+        if (GunUi != null)
+        {
+            GunUi.SetActive(true);
         }
     }
 
-    private void EquipWeapon(string weaponName)
+    IEnumerator UnequipWeapon()
     {
-        if (WeaponHolder != null)
+        yield return new WaitForSeconds(EquipDelay);
+
+        if (currentlyEquippedWeapon == null) yield break;
+
+        Shooting shooting = currentlyEquippedWeapon.GetComponent<Shooting>();
+        if (shooting != null)
         {
-            
-            Transform newWeaponTransform = WeaponHolder.transform.Find(weaponName);
-            if (newWeaponTransform != null)
-            {
-                GameObject newWeapon = newWeaponTransform.gameObject;
-
-                
-                if (currentlyEquippedWeapon == newWeapon)
-                {
-                    
-                    newWeapon.SetActive(false);
-                    currentlyEquippedWeapon = null;
-                    Debug.Log(weaponName + " has been unequipped!");
-                }
-                else
-                {
-                    
-                    if (currentlyEquippedWeapon != null)
-                    {
-                        StartCoroutine(UnequipDelayed());
-                    }
-
-                    
-                    newWeapon.SetActive(true);
-                    currentlyEquippedWeapon = newWeapon;
-
-                   
-                    newWeaponTransform.localPosition = new Vector3 (0.5f,0,0);
-                    newWeaponTransform.localRotation = Quaternion.Euler(0,-180,0);
-
-
-                    Shooting shooting = newWeapon.GetComponent<Shooting>();
-                    if (shooting != null)
-                    {
-                        shooting.enabled = true;
-                        shooting.ResetState();
-                    }
-
-                    newWeapon.transform.GetComponent<Shooting>().enabled = true;
-
-                    Debug.Log(weaponName + " has been equipped and positioned!");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("No weapon named '" + weaponName + "' found in WeaponHolder!");
-            }
+            shooting.StopAllCoroutines();
+            shooting.enabled = false;
         }
-        else
-        {
-            Debug.LogError("WeaponHolder is not assigned in the Inspector!");
-        }
+
+        currentlyEquippedWeapon.SetActive(false);
+        playerMovement.SetEquippedWeapon(null); // Notify PlayerMovement
+        currentlyEquippedWeapon = null;
     }
 }
