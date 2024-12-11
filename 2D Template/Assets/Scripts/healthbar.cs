@@ -102,6 +102,11 @@ public class healthbar : MonoBehaviour
             Time.timeScale = 0f;
             GameOver.SetActive(true);
         }
+        else
+        {
+            Time.timeScale = 1f;
+            GameOver.SetActive(false);
+        }
     }
     public void Hurt(float subtrahend)
     {
