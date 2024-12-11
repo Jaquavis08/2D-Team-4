@@ -35,7 +35,7 @@ public class WeaponPickedup : MonoBehaviour
 
         if (collision.CompareTag("Weapon") && collision.name == "Ammo")
         {
-            Shooting.Instance.Ammo += 15;
+            Shooting.Instance.Ammo += Random.Range(10, 20);
             Destroy(collision.gameObject);
             pickupUIPrompt.SetActive(false);
         }
@@ -80,7 +80,7 @@ public class WeaponPickedup : MonoBehaviour
 
         if (WeaponInRange.name == "Ammo")
         {
-            Shooting.Instance.Ammo += 15;
+            Shooting.Instance.Ammo += Random.Range(10, 20);
             Destroy(WeaponInRange.gameObject);
         }
 
