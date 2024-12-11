@@ -276,5 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d67940442b33a418ecfa05dd6b3ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 0
   lifemax: 50
   Player: {fileID: 0}

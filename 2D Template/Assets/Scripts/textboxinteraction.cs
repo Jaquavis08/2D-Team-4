@@ -17,7 +17,7 @@ public class textboxinteraction : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && contact && GetComponent<PlayerMovement>().enabled)
         {
-            GetComponent<PlayerMovement>().physics();
+            GetComponent<PlayerMovement>().StopPhysics();
             GameObject.FindWithTag("text box").GetComponent<Textbox>().textbox(message);
             GetComponent<PlayerMovement>().enabled = false;
 

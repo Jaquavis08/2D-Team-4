@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour
     public float bulletForce = 20f;
     private bool canShoot = true;
     private bool isShooting = false;
-    public string GunName = "Gun";
+    //public string GunName = "Gun";
 
 
     private void Awake()
@@ -48,10 +48,10 @@ public class Shooting : MonoBehaviour
                 StartCoroutine(ShootDelay());
         }
         
-        if (Input.GetKeyDown(KeyCode.R) && MagAmount < MaxMagAmount && Ammo > 0)
-        {
-            StartCoroutine(ReloadDelay());
-        }
+        //if (Input.GetKeyDown(KeyCode.R) && MagAmount < MaxMagAmount && Ammo > 0)
+        //{
+        //    StartCoroutine(ReloadDelay());
+        //}
     }
 
     private IEnumerator ShootBullet(GameObject bullet)

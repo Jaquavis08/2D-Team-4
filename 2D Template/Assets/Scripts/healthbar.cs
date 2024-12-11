@@ -1,23 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class healthbar : MonoBehaviour
 {
     public static healthbar Instance;
 
+<<<<<<< HEAD
 
 
     float life;
+=======
+
+    public float life;
+>>>>>>> 0cb4f39b6ed488e5fc4c1b1202898e74dd00aea6
     public float lifemax;
     public GameObject Player;
-    public Slider slider;
+    public GameObject Pivot;
+    public GameObject percent;
+    public GameObject GameOver;
+    //public Slider slider;
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         life = 100;
         life = lifemax;
+=======
+        GameOver.SetActive(false);
+        life = 100;
+        life = lifemax;
+        StartCoroutine(PassiveHeal());
+    }
+
+    IEnumerator PassiveHeal()
+    {
+        yield return new WaitForSeconds(5);
+        Heal(5);
+        StartCoroutine(PassiveHeal());
+
+>>>>>>> 0cb4f39b6ed488e5fc4c1b1202898e74dd00aea6
     }
 
     private void Awake()
@@ -33,12 +58,69 @@ public class healthbar : MonoBehaviour
         }
     }
 
+
+    private bool IsMouseOverUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
+    }
+
     // Update is called once per frame
     void Update()
     {
         transform.GetChild(0).GetComponent<RectTransform>().localScale = new Vector3(life / lifemax,1,1);
 
         transform.GetChild(0).localScale = new Vector3(life / lifemax,1,1);
+<<<<<<< HEAD
+=======
+
+        if(IsMouseOverUI())
+        {
+            percent.GetComponent<TMP_Text>().SetText(life +  "%");
+            percent.SetActive(true);
+        }
+        else
+        {
+            percent.SetActive(false);
+        }
+
+        if (life <= 100)
+        {
+            if (life >= 51)
+                for (int i = 0; i < 3; i++)
+                {
+                    Pivot.transform.GetChild(i).GetComponent<Image>().color = Color.green;
+                }
+        }
+
+        if (life <= 50)
+        {
+            if(life >= 26)
+            for(int i = 0; i < 3; i++)
+            {
+                Pivot.transform.GetChild(i).GetComponent<Image>().color = Color.yellow;
+            }
+        }
+
+        if (life <= 25)
+        {
+            if (life >= 0)
+                for (int i = 0; i < 3; i++)
+                {
+                    Pivot.transform.GetChild(i).GetComponent<Image>().color = Color.red;
+                }
+        }
+
+        if(life <= 0)
+        {
+            Time.timeScale = 0f;
+            GameOver.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            GameOver.SetActive(false);
+        }
+>>>>>>> 0cb4f39b6ed488e5fc4c1b1202898e74dd00aea6
     }
     public void Hurt(float subtrahend)
     {
@@ -46,7 +128,8 @@ public class healthbar : MonoBehaviour
         if (life < 0)
         {
             life = 0;
-            Destroy(Player);
+            Time.timeScale = 0f;
+            GameOver.SetActive(true);
         }
     }
     public void Heal(float addend)
