@@ -24,7 +24,7 @@ public class WeaponPickedup : MonoBehaviour
         if(collision.gameObject.name == "Ammo")
         {
             Shooting.Instance.Ammo += Random.Range(5, 20);
-            Destroy(weaponInRange.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 
