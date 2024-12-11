@@ -17,15 +17,15 @@ public class textboxinteraction : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && contact && GetComponent<PlayerMovement>().enabled)
         {
-            GetComponent<PlayerMovement>().physics();
-            GameObject.FindWithTag("text box").GetComponent<textbox>().Textbox(message);
+            GetComponent<PlayerMovement>().StopPhysics();
+            GameObject.FindWithTag("text box").GetComponent<Textbox>().textbox(message);
             GetComponent<PlayerMovement>().enabled = false;
 
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && GameObject.FindWithTag("text box").GetComponent<textbox>().MessageStatus())
+        if (Input.GetKeyDown(KeyCode.LeftShift) && GameObject.FindWithTag("text box").GetComponent<Textbox>().MessageStatus())
         {
             GetComponent<PlayerMovement>().enabled = true;
-            GameObject.FindWithTag("text box").GetComponent<textbox>().Disable();
+            GameObject.FindWithTag("text box").GetComponent<Textbox>().Disable();
         }
     }
     void OnTriggerStay2D(Collider2D other)
