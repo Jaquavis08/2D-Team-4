@@ -10,16 +10,18 @@ public class healthbar : MonoBehaviour
     public static healthbar Instance;
 
 
-    public float life;
+
+    float life;
+
     public float lifemax;
     public GameObject Player;
     public GameObject Pivot;
     public GameObject percent;
     public GameObject GameOver;
-    //public Slider slider;
-    // Start is called before the first frame update
     void Start()
     {
+        life = 100;
+        life = lifemax;
         GameOver.SetActive(false);
         life = 100;
         life = lifemax;
