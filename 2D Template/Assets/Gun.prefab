@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4091092668000158629}
   m_Layer: 0
   m_Name: Firepoint
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5555545850560572555}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -8.31, y: 3.11, z: 0.08952517}
+  m_LocalPosition: {x: -7.11, y: 1.03, z: 0.08952517}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2839183558734299646}
   - component: {fileID: 3936077609798312044}
   - component: {fileID: 8461758255289583774}
+  - component: {fileID: 5785099112973690518}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Weapon
@@ -59,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 8443435967000490029}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0.66, y: 2.34, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4091092668000158629}
@@ -106,8 +107,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c256847031958c1448bff8dbb80fa567, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b6531db87938d3d48a9dccccdf7b6c79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,7 +136,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 21, y: 15.001465}
+    oldSize: {x: 10.24, y: 10.24}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -158,4 +159,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePiont: {fileID: 4091092668000158629}
   BulletPrefab: {fileID: 8443435967000490029, guid: 51e21332328c06f41aa080507005f6dd, type: 3}
-  bulletForce: 35
+  MagAmount: 15
+  MaxMagAmount: 15
+  Ammo: 100
+  BulletCooldown: 0.21
+  ReloadCooldown: 1
+  bulletForce: 70
+--- !u!114 &5785099112973690518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8443435967000490029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6aa407bf17aac949ae18f17a28533b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
