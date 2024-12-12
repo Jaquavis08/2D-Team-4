@@ -1148,6 +1148,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448914238}
   m_CullTransparentMesh: 1
+--- !u!1 &449115346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1206149029648050325, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
+  m_PrefabInstance: {fileID: 1107922071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &506078060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2787,7 +2792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: {fileID: 1647299306}
   MagAndAmmo: {fileID: 96838163}
-  WeaponHolder: {fileID: 0}
+  WeaponHolder: {fileID: 449115346}
 --- !u!1 &1084872340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,6 +2924,10 @@ PrefabInstance:
       propertyPath: playerFront
       value: 
       objectReference: {fileID: 21300000, guid: 253d5e8f220c0b941a6ecc88862f3506, type: 3}
+    - target: {fileID: 1227077775690353, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
+      propertyPath: weaponDistance
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 203434568648232891, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
       propertyPath: GunUi
       value: 
@@ -3075,6 +3084,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 162.309}
+--- !u!1 &1171524979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8443435967000490029, guid: 80cce2114c4c6ae42b387b0e9e718ee0, type: 3}
+  m_PrefabInstance: {fileID: 506078060}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1171524985
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171524979}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1181943451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,6 +3906,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1616658994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1303555623392958752, guid: 25ffd0905c9b23245929fec7ea23f7d3, type: 3}
+  m_PrefabInstance: {fileID: 1107922071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631679901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6013,10 +6053,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifemax: 100
-  Player: {fileID: 0}
-  Pivot: {fileID: 0}
-  percent: {fileID: 0}
-  GameOver: {fileID: 0}
+  Player: {fileID: 1616658994}
+  Pivot: {fileID: 1805291322}
+  percent: {fileID: 1697008121}
+  GameOver: {fileID: 2093294909}
 --- !u!114 &2105758152
 MonoBehaviour:
   m_ObjectHideFlags: 0
