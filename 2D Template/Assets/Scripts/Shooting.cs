@@ -48,10 +48,10 @@ public class Shooting : MonoBehaviour
                 StartCoroutine(ShootDelay());
         }
         
-        if (Input.GetKeyDown(KeyCode.R) && MagAmount < MaxMagAmount && Ammo > 0)
-        {
-            StartCoroutine(ReloadDelay());
-        }
+        //if (Input.GetKeyDown(KeyCode.R) && MagAmount < MaxMagAmount && Ammo > 0)
+        //{
+        //    StartCoroutine(ReloadDelay());
+        //}
     }
 
     private IEnumerator ShootBullet(GameObject bullet)
