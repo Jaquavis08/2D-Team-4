@@ -128,4 +128,8 @@ public class healthbar : MonoBehaviour
             life = lifemax;
         }
     }
+    public float GetLife()
+    {
+        return life;
+    }
 }
