@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    bool invincible = false;
+    public float fademin;
+    public float fademax;
+    public float fadestep;
+    int fadedir=0;
+
     [SerializeField] private float moveSpeed = 5f;
 
     private Vector2 movement;
@@ -65,6 +71,31 @@ public class PlayerMovement : MonoBehaviour
         }
 
         RotateTowardsMouse();
+
+        if (invincible)
+        {
+
+            if (fadedir == 0)
+            {
+                spriteRenderer.color -= new Color(0, 0, 0, fadestep);
+            }
+            else
+            {
+                spriteRenderer.color += new Color(0, 0, 0, fadestep);
+            }
+            if (spriteRenderer.color.a <= fademin)
+            {
+                fadedir = 1;
+            }
+            else if (spriteRenderer.color.a >= fademax)
+            {
+                fadedir = 0;
+            }
+        }
+        else
+        {
+            spriteRenderer.color = new Color(1, 1, 1, 1);
+        }
     }
 
     void FixedUpdate()
@@ -127,5 +158,19 @@ public class PlayerMovement : MonoBehaviour
     public void StopPhysics()
     {
         rb.velocity = Vector3.zero;
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "enemy" && !invincible)
+        {
+            GameObject.FindWithTag("hb").GetComponent<healthbar>().Hurt(5);
+            invincible = true;
+            Invoke("xes",0.5f);
+        }
+    }
+    void xes()
+    {
+        invincible = false;
     }
 }
