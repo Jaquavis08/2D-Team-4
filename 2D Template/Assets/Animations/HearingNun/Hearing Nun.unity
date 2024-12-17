@@ -332,12 +332,13 @@ MonoBehaviour:
   WaitTime: 1
   targetPoint: {fileID: 0}
   Waiting: 0
-  HearingNun: 1
-  SeeingNun: 0
+  HearingNun: 0
+  SeeingNun: 1
   SpeakingNun: 0
   animator: {fileID: 61014348}
   Range: 2
   movement: {x: 0, y: 0}
+  roam: 0
 --- !u!61 &61014351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2028,6 +2029,7 @@ MonoBehaviour:
   animator: {fileID: 1028721631}
   Range: 2
   movement: {x: 0, y: 0}
+  roam: 0
 --- !u!61 &1028721629
 BoxCollider2D:
   m_ObjectHideFlags: 0
