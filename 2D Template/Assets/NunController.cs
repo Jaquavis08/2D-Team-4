@@ -16,9 +16,12 @@ public class NunController : MonoBehaviour
     public float MaxHealth = 100f;
     public bool Hited;
 
-    public float WaitTime = 1f;
+    public float stoppingDistance = 0.5f;
+    public float roamRadius = 10f;
     public Transform targetPoint;
+    private bool hasTarget = false;
     public bool Waiting = false;
+    public float WaitTime = 0f;
 
     public bool HearingNun;
     public bool SeeingNun;
@@ -28,7 +31,7 @@ public class NunController : MonoBehaviour
     bool Healing;
     
     public float Range;
-    public Vector2 movement;
+    //public Vector2 movement;
     public bool roam;
     // Start is called before the first frame update
     void Start()
@@ -61,9 +64,16 @@ public class NunController : MonoBehaviour
 
         if (roam == true)
         {
-            transform.position = new Vector3(Random.Range(0, 5), Random.Range(0, 5), 0);
+            //targetPoint = (Vector2) (Random.Range(0, 5), Random.Range(0, 5));
 
         }
+    }
+
+    void FindNewTarget()
+    {
+        Vector2 randomDirection = Random.insideUnitCircle * roamRadius;
+        //targetPoint.transform.position = (Vector2) transform.position, randomDirection;
+        hasTarget = true;
     }
 
     //transform.position = Vector3.MoveTowards(this.transform.position, targetPoint.position, Speed* Time.deltaTime);
