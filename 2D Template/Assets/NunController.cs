@@ -62,6 +62,7 @@ public class NunController : MonoBehaviour
         if (roam == true)
         {
             transform.position = new Vector3(Random.Range(0, 5), Random.Range(0, 5), 0);
+
         }
     }
 
