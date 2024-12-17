@@ -29,6 +29,7 @@ public class NunController : MonoBehaviour
     
     public float Range;
     public Vector2 movement;
+    public bool roam;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +58,12 @@ public class NunController : MonoBehaviour
                 SpeakingNunAi();
             }
         }
+
+        if (roam == true)
+        {
+            transform.position = new Vector3(Random.Range(0, 5), Random.Range(0, 5), 0);
+
+        }
     }
 
     //transform.position = Vector3.MoveTowards(this.transform.position, targetPoint.position, Speed* Time.deltaTime);
@@ -69,7 +76,10 @@ public class NunController : MonoBehaviour
             targetPoint = FindObjectOfType<PlayerMovement>().gameObject.transform;
             //transform.position = Vector3.MoveTowards(this.transform.position, targetPoint.position, Speed * Time.deltaTime);
 
-            animator.SetBool("Healing", true);
+            if (Hited == false)
+            {
+                animator.SetBool("Healing", true);
+            }
 
         }
     }
@@ -81,13 +91,15 @@ public class NunController : MonoBehaviour
         {
             targetPoint = FindObjectOfType<PlayerMovement>().gameObject.transform;
             transform.position = Vector3.MoveTowards(this.transform.position, targetPoint.position, Speed * Time.deltaTime);
+            roam = false;
 
 
+            //return;
+        }
 
-            //if (Vector3.Distance(transform.position, targetPoint.position) < 0.1f);
-            //{
-            //    StartCoroutine(WaitAndSwitch());
-            //}
+        if (distance > Range)
+        {
+            roam = true;
         }
     }
 
@@ -99,16 +111,15 @@ public class NunController : MonoBehaviour
             targetPoint = FindObjectOfType<PlayerMovement>().gameObject.transform;
             transform.position = Vector3.MoveTowards(this.transform.position, targetPoint.position, Speed * Time.deltaTime);
 
-            if (Hited == false)
-            {
-                animator.SetBool("Healing", true);
-            }
-
 
 
 
         }
-       
+
+        if (distance > Range)
+        {
+            roam = true;
+        }
 
     }
 

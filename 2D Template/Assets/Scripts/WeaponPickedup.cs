@@ -19,6 +19,7 @@ public class WeaponPickedup : MonoBehaviour
 
     private PlayerMovement playerMovement;
 
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.name == "Ammo")
