@@ -151,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 renderer.sortingOrder = -1;  // Weapon appears behind the player
             }
-            if(Input.GetKeyDown(moveDownKey)) // Player is facing forwards (S key)
+            if (Input.GetKeyDown(moveDownKey)) // Player is facing forwards (S key)
             {
                 renderer.sortingOrder = 1;  // Weapon appears in front of the player
             }

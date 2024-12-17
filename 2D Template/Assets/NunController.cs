@@ -21,6 +21,7 @@ public class NunController : MonoBehaviour
     public Transform targetPoint;
     private bool hasTarget = false;
     public bool Waiting = false;
+    public float WaitTime = 0f;
 
     public bool HearingNun;
     public bool SeeingNun;
