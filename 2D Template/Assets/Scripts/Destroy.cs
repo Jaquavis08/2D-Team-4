@@ -6,12 +6,20 @@ public class Destroy : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag=="enemy"|| collision.gameObject.tag == "healer")
+        {
+
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "healer")
+        {
+            Destroy(this.gameObject);
+
+        }
     }
 
 }
