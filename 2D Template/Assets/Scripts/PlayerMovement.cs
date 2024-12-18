@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -31,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private KeyCode moveUpKey = KeyCode.W;
     [SerializeField] private KeyCode moveDownKey = KeyCode.S;
+
+    private bool MovementInvert = false;
 
     private Dictionary<KeyCode, int> sortingOrderMapping = new Dictionary<KeyCode, int>
     {
@@ -115,7 +118,14 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = movement * moveSpeed;
+        if (MovementInvert)
+        {
+            rb.velocity = -movement * moveSpeed;
+        }
+        else
+        {
+            rb.velocity = movement * moveSpeed;
+        }
     }
 
     [SerializeField] private float weaponDistance = 1.5f;
@@ -144,6 +154,7 @@ public class PlayerMovement : MonoBehaviour
             renderer.flipY = shouldFlip;
 
             // Adjust firepoint position
+            if(firepoint != null)
             firepoint.localPosition = shouldFlip ? firepointFlippedOffset : firepointOffset;
 
             // If facing backwards (W key), send the weapon behind the player by adjusting sorting order
@@ -184,6 +195,23 @@ public class PlayerMovement : MonoBehaviour
             Invoke("xes",0.5f);
         }
     }
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if(other.gameObject.tag == ""); // player movement invert curse
+    //    {
+    //        if (other.gameObject.GetComponentInParent<>().gameObject != null) // curse nun script
+    //        {
+    //            other.gameObject.SetActive(false);
+    //            MovementInvert = true;
+    //        }
+    //        else
+    //        {
+    //            Destroy(other.gameObject);
+    //            MovementInvert = false;
+    //        }
+    //    }
+    //}
     void xes()
     {
         invincible = false;
