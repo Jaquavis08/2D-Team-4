@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    GameObject influence;
     bool invincible = false;
     public float fademin;
     public float fademax;
@@ -167,6 +168,13 @@ public class PlayerMovement : MonoBehaviour
             GameObject.FindWithTag("hb").GetComponent<healthbar>().Hurt(5);
             invincible = true;
             Invoke("xes",0.5f);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag=="curse")
+        {
+            influence = other.gameObject;
         }
     }
     void xes()
