@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+<<<<<<< HEAD
     GameObject influence;
+=======
+    public static PlayerMovement Instance;
+
+>>>>>>> d901e40d7ded9737adb9c217063d9c7f1945e99a
     bool invincible = false;
     public float fademin;
     public float fademax;
     public float fadestep;
-    int fadedir=0;
+    int fadedir = 0;
 
     [SerializeField] private float moveSpeed = 5f;
 
@@ -31,11 +37,26 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private KeyCode moveUpKey = KeyCode.W;
     [SerializeField] private KeyCode moveDownKey = KeyCode.S;
 
+    private bool MovementInvert = false;
+
     private Dictionary<KeyCode, int> sortingOrderMapping = new Dictionary<KeyCode, int>
     {
         { KeyCode.W, 0 },
         { KeyCode.S, 1 }
     };
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -101,7 +122,14 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = movement * moveSpeed;
+        if (MovementInvert)
+        {
+            rb.velocity = -movement * moveSpeed;
+        }
+        else
+        {
+            rb.velocity = movement * moveSpeed;
+        }
     }
 
     [SerializeField] private float weaponDistance = 1.5f;
@@ -130,6 +158,7 @@ public class PlayerMovement : MonoBehaviour
             renderer.flipY = shouldFlip;
 
             // Adjust firepoint position
+            if(firepoint != null)
             firepoint.localPosition = shouldFlip ? firepointFlippedOffset : firepointOffset;
 
             // If facing backwards (W key), send the weapon behind the player by adjusting sorting order
@@ -137,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 renderer.sortingOrder = -1;  // Weapon appears behind the player
             }
-            if(Input.GetKeyDown(moveDownKey)) // Player is facing forwards (S key)
+            if (Input.GetKeyDown(moveDownKey)) // Player is facing forwards (S key)
             {
                 renderer.sortingOrder = 1;  // Weapon appears in front of the player
             }
@@ -170,13 +199,25 @@ public class PlayerMovement : MonoBehaviour
             Invoke("xes",0.5f);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag=="curse")
-        {
-            influence = other.gameObject;
-        }
-    }
+=======
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if(other.gameObject.tag == ""); // player movement invert curse
+    //    {
+    //        if (other.gameObject.GetComponentInParent<>().gameObject != null) // curse nun script
+    //        {
+    //            other.gameObject.SetActive(false);
+    //            MovementInvert = true;
+    //        }
+    //        else
+    //        {
+    //            Destroy(other.gameObject);
+    //            MovementInvert = false;
+    //        }
+    //    }
+    //}
+>>>>>>> d901e40d7ded9737adb9c217063d9c7f1945e99a
     void xes()
     {
         invincible = false;
