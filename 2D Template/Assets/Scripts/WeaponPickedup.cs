@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -18,16 +19,7 @@ public class WeaponPickedup : MonoBehaviour
     public GameObject pickupUIPrompt;
 
     private PlayerMovement playerMovement;
-
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.name == "Ammo")
-        {
-            Shooting.Instance.Ammo += Random.Range(5, 20);
-            Destroy(collision.gameObject);
-        }
-    }
+    private List<GameObject> weapons = new List<GameObject>();
 
     void Start()
     {
@@ -54,28 +46,59 @@ public class WeaponPickedup : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Ammo")
+        {
+            TryPickupAmmo(collision.gameObject);
+        }
+    }
+
     void CheckForWeapon()
     {
-        GameObject[] weapons = GameObject.FindGameObjectsWithTag("Weapon");
+        Collider2D[] nearbyWeapons = Physics2D.OverlapCircleAll(transform.position, Range);
         weaponInRange = null;
 
-        foreach (GameObject weapon in weapons)
+        foreach (var collider in nearbyWeapons)
         {
-            float distance = Vector3.Distance(transform.position, weapon.transform.position);
-
-            if (distance <= Range && weapon.transform.parent != WeaponHolder.transform)
+            if (collider.CompareTag("Weapon") && collider.transform.parent != WeaponHolder.transform)
             {
-                weaponInRange = weapon;
-
-                if (pickupUIPrompt != null)
+                if (collider.name == "Ammo")
                 {
-                    pickupUIPrompt.GetComponent<TMP_Text>().SetText($"Press [E] To Pick Up: {weapon.name}");
-                    pickupUIPrompt.SetActive(true);
+                    TryPickupAmmo(collider.gameObject);
+                    return;
                 }
+
+                weaponInRange = collider.gameObject;
+                ShowPickupPrompt(weaponInRange.name);
                 return;
             }
         }
 
+        HidePickupPrompt();
+    }
+
+    void TryPickupAmmo(GameObject ammo)
+    {
+        float distance = Vector3.Distance(transform.position, ammo.transform.position);
+        if (distance <= 1.2f)
+        {
+            Shooting.Instance.Ammo += Random.Range(5, 20);
+            Destroy(ammo);
+        }
+    }
+
+    void ShowPickupPrompt(string weaponName)
+    {
+        if (pickupUIPrompt != null)
+        {
+            pickupUIPrompt.GetComponent<TMP_Text>().SetText($"Press [E] To Pick Up: {weaponName}");
+            pickupUIPrompt.SetActive(true);
+        }
+    }
+
+    void HidePickupPrompt()
+    {
         if (pickupUIPrompt != null)
         {
             pickupUIPrompt.SetActive(false);
@@ -86,35 +109,27 @@ public class WeaponPickedup : MonoBehaviour
     {
         if (weaponInRange == null) return;
 
-        if(weaponInRange.name == "Ammo")
+        if (weaponInRange.name == "Ammo")
         {
-            Shooting.Instance.Ammo += Random.Range(10, 20);
-            Destroy(weaponInRange.gameObject);
-
+            TryPickupAmmo(weaponInRange);
         }
-        if(weaponInRange.name != "Ammo")
+        else if (weapons.Count < weaponSlots.Length)
         {
             weaponInRange.transform.SetParent(WeaponHolder.transform);
             weaponInRange.GetComponent<BoxCollider2D>().enabled = false;
-            weaponInRange.gameObject.SetActive(false);
+            weaponInRange.SetActive(false);
+            weapons.Add(weaponInRange);
         }
 
-        if (pickupUIPrompt != null)
-        {
-            pickupUIPrompt.SetActive(false);
-        }
-
+        HidePickupPrompt();
         weaponInRange = null;
     }
 
     void EquipWeaponBySlot(int slotIndex)
     {
-        if (slotIndex < 0 || slotIndex >= WeaponHolder.transform.childCount) return;
+        if (slotIndex < 0 || slotIndex >= weapons.Count) return;
 
-        Transform weaponTransform = WeaponHolder.transform.GetChild(slotIndex);
-        if (weaponTransform == null) return;
-
-        GameObject weapon = weaponTransform.gameObject;
+        GameObject weapon = weapons[slotIndex];
 
         if (currentlyEquippedWeapon == weapon)
         {
@@ -130,11 +145,19 @@ public class WeaponPickedup : MonoBehaviour
     {
         yield return new WaitForSeconds(EquipDelay);
 
+        // Deactivate the currently equipped weapon
         if (currentlyEquippedWeapon != null)
         {
-            StartCoroutine(UnequipWeapon());
+            currentlyEquippedWeapon.SetActive(false);
+            Shooting shooting = currentlyEquippedWeapon.GetComponent<Shooting>();
+            if (shooting != null)
+            {
+                shooting.StopAllCoroutines();
+                shooting.enabled = false;
+            }
         }
 
+        // Equip the new weapon
         weapon.SetActive(true);
         currentlyEquippedWeapon = weapon;
 
@@ -143,11 +166,11 @@ public class WeaponPickedup : MonoBehaviour
         weapon.transform.localPosition = new Vector3(0.5f, 0, 0);
         weapon.transform.localRotation = Quaternion.Euler(0, -180, 0);
 
-        Shooting shooting = weapon.GetComponent<Shooting>();
-        if (shooting != null)
+        Shooting newShooting = weapon.GetComponent<Shooting>();
+        if (newShooting != null)
         {
-            shooting.enabled = true;
-            shooting.ResetState();
+            newShooting.enabled = true;
+            newShooting.ResetState();
         }
 
         if (GunUi != null)
@@ -172,5 +195,12 @@ public class WeaponPickedup : MonoBehaviour
         currentlyEquippedWeapon.SetActive(false);
         playerMovement.SetEquippedWeapon(null); // Notify PlayerMovement
         currentlyEquippedWeapon = null;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // Visualize weapon detection range in the editor
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, Range);
     }
 }
