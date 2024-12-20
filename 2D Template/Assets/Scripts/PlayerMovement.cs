@@ -5,12 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-<<<<<<< HEAD
     GameObject influence;
-=======
     public static PlayerMovement Instance;
-
->>>>>>> d901e40d7ded9737adb9c217063d9c7f1945e99a
     bool invincible = false;
     public float fademin;
     public float fademax;
@@ -118,6 +114,15 @@ public class PlayerMovement : MonoBehaviour
         {
             spriteRenderer.color = new Color(1, 1, 1, 1);
         }
+
+        if (influence != null) // curse nun script
+        {
+            MovementInvert = true;
+        }
+        else
+        {
+            MovementInvert = false;
+        }
     }
 
     void FixedUpdate()
@@ -199,25 +204,17 @@ public class PlayerMovement : MonoBehaviour
             Invoke("xes",0.5f);
         }
     }
-=======
 
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if(other.gameObject.tag == ""); // player movement invert curse
-    //    {
-    //        if (other.gameObject.GetComponentInParent<>().gameObject != null) // curse nun script
-    //        {
-    //            other.gameObject.SetActive(false);
-    //            MovementInvert = true;
-    //        }
-    //        else
-    //        {
-    //            Destroy(other.gameObject);
-    //            MovementInvert = false;
-    //        }
-    //    }
-    //}
->>>>>>> d901e40d7ded9737adb9c217063d9c7f1945e99a
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        
+        if (other.gameObject.tag=="curse")
+        {
+            influence = other.gameObject.GetComponent<curse>().GetSender();
+            Destroy(other.gameObject);
+        }
+    }
     void xes()
     {
         invincible = false;

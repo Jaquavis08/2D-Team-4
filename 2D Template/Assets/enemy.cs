@@ -34,7 +34,7 @@ public class enemy : MonoBehaviour
 
             foreach (GameObject healer in healers)
             {
-                if (Vector3.Distance(healer.transform.position, transform.position) < 10)
+                if (Vector3.Distance(healer.transform.position, transform.position) < 20)
                 {
 
                     if (life <= 10)
