@@ -329,7 +329,8 @@ MonoBehaviour:
   Health: 100
   MaxHealth: 100
   Hited: 0
-  WaitTime: 1
+  stoppingDistance: 0.5
+  roamRadius: 10
   targetPoint: {fileID: 0}
   Waiting: 0
   HearingNun: 0
@@ -337,7 +338,6 @@ MonoBehaviour:
   SpeakingNun: 0
   animator: {fileID: 61014348}
   Range: 2
-  movement: {x: 0, y: 0}
   roam: 0
 --- !u!61 &61014351
 BoxCollider2D:
@@ -2020,7 +2020,8 @@ MonoBehaviour:
   Health: 100
   MaxHealth: 100
   Hited: 0
-  WaitTime: 1
+  stoppingDistance: 0.5
+  roamRadius: 10
   targetPoint: {fileID: 0}
   Waiting: 0
   HearingNun: 1
@@ -2028,7 +2029,6 @@ MonoBehaviour:
   SpeakingNun: 0
   animator: {fileID: 1028721631}
   Range: 2
-  movement: {x: 0, y: 0}
   roam: 0
 --- !u!61 &1028721629
 BoxCollider2D:
