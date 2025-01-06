@@ -83,7 +83,7 @@ public class WeaponPickedup : MonoBehaviour
         float distance = Vector3.Distance(transform.position, ammo.transform.position);
         if (distance <= 1.2f)
         {
-            Shooting.Instance.Ammo += Random.Range(5, 20);
+            Shooting.Instance.Ammo += UnityEngine.Random.Range(5, 20);
             Destroy(ammo);
         }
     }
