@@ -6,7 +6,6 @@ using UnityEngine.Rendering.Universal;
 
 public class LightFlicker : MonoBehaviour
 {
-    [SerializeField] private Light2D light;
 
     private int frames = 0;
 
@@ -33,6 +32,6 @@ public class LightFlicker : MonoBehaviour
 
         float randomValue = (float)(random.NextDouble() * (maxValue - minValue) + minValue);
 
-        light.intensity = randomValue;
+        this.GetComponent<Light2D>().intensity = randomValue;
     }
 }
