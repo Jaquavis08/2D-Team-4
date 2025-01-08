@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float fadestep;
     int fadedir = 0;
     public float MinTime = 0; 
-    public float MaxTime = 10000000;
+    public float MaxTime = 1200;
     public GameObject JumpScare;
 
     [SerializeField] private float moveSpeed = 5f;
@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
             MovementInvert = false;
         }
 
-        MinTime += 1f;
+        MinTime += 1f * Time.deltaTime;
         if(MinTime >= MaxTime)
         {
             MinTime = 0;
