@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,7 +129,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Seek Nun_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 863
+        width: 123
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ae27acf2617454791c4bdf562fa837
+      internalID: 1946094564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seek Nun_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 823
+        width: 81
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df3a2f3f7175dc47aed82577c97b832
+      internalID: 2053633914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seek Nun_4
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 921
+        width: 63
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d61279f77976b41a00fe0bd4af4570
+      internalID: -1874028311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seek Nun_6
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 730
+        width: 143
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaaf14785785d294cbce644bc53b2e50
+      internalID: 1940385507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seek Nun_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 399
+        height: 767
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac967d31b5da4184a9abab1415f3b906
+      internalID: 1617903874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seek Nun_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 983
+        width: 82
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a151be7644951a347a3e0a978bbc259e
+      internalID: -1920331645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seek Nun_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 7
+        width: 360
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1e172658abb204bbf7777e5ecce5fb
+      internalID: 1003961867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seek Nun_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 730
+        width: 143
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce42cdb19d8328f4286fa4b684ff3c4b
+      internalID: 1226486755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seek Nun_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 391
+        width: 334
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40720d0538a4d44ab3dc9aded210951
+      internalID: 174108029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -140,9 +329,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Seek Nun_1: -1920331645
+      Seek Nun_2: 1003961867
+      Seek Nun_7: 1617903874
+      Seek Nun_3: 2053633914
+      Seek Nun_5: 1226486755
+      Seek Nun_6: 1940385507
+      Seek Nun_4: -1874028311
+      Seek Nun_8: 174108029
+      Seek Nun_0: 1946094564
   spritePackingTag: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

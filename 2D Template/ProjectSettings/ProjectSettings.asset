@@ -734,11 +734,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: ad21410f-a88f-4c98-b922-c7e877bc9575
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: 2D Template
+  organizationId: lainaw2
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
