@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/convent.unity
     guid: 0d19a3fd7e003b34785ea267679e19c7
+  - enabled: 1
+    path: Assets/Scenes/Trial Tilemap.unity
+    guid: 426a7d0bcacc1cf4cb20d8b733a79480
   m_configObjects: {}
