@@ -56,6 +56,7 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator ShootBullet(GameObject bullet)
     {
+        CameraShake.instance.Shake(0.1f,0.025f,1f);
         yield return new WaitForSeconds(2f);
         Destroy(bullet);
     }
