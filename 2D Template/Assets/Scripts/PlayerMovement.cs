@@ -186,11 +186,11 @@ public class PlayerMovement : MonoBehaviour
             // If facing backwards (W key), send the weapon behind the player by adjusting sorting order
             if (Input.GetKeyDown(moveUpKey)) // Player is facing backwards
             {
-                renderer.sortingOrder = -1;  // Weapon appears behind the player
+                renderer.sortingOrder = 1;  // Weapon appears behind the player
             }
             if (Input.GetKeyDown(moveDownKey)) // Player is facing forwards (S key)
             {
-                renderer.sortingOrder = 1;  // Weapon appears in front of the player
+                renderer.sortingOrder = 2;  // Weapon appears in front of the player
             }
         }
     }
