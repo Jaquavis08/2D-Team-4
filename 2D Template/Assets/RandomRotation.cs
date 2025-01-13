@@ -8,6 +8,8 @@ public class RandomRotation : MonoBehaviour
     private float ry;
 
     // Start is called before the first frame update
+
+
     void Start()
     {
         Object = this.gameObject;
