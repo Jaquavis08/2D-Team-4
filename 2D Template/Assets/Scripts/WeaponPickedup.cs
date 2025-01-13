@@ -63,11 +63,11 @@ public class WeaponPickedup : MonoBehaviour
         {
             if (collider.CompareTag("Weapon") && collider.transform.parent != WeaponHolder.transform)
             {
-                if (collider.name == "Ammo")
-                {
-                    TryPickupAmmo(collider.gameObject);
-                    return;
-                }
+                //if (collider.name == "Ammo")
+                //{
+                //    TryPickupAmmo(collider.gameObject);
+                //    return;
+                //}
 
                 weaponInRange = collider.gameObject;
                 ShowPickupPrompt(weaponInRange.name);
@@ -92,8 +92,18 @@ public class WeaponPickedup : MonoBehaviour
     {
         if (pickupUIPrompt != null)
         {
-            pickupUIPrompt.GetComponent<TMP_Text>().SetText($"Press [E] To Pick Up: {weaponName}");
-            pickupUIPrompt.SetActive(true);
+            if (weaponName == "Ammo")
+            {
+                pickupUIPrompt.GetComponent<TMP_Text>().SetText($"Pick Up: {weaponName}");
+                pickupUIPrompt.SetActive(true);
+                return;
+            }
+            else
+            {
+                pickupUIPrompt.GetComponent<TMP_Text>().SetText($"Press [E] To Pick Up: {weaponName}");
+                pickupUIPrompt.SetActive(true);
+                return;
+            }
         }
     }
 
@@ -109,10 +119,10 @@ public class WeaponPickedup : MonoBehaviour
     {
         if (weaponInRange == null) return;
 
-        if (weaponInRange.name == "Ammo")
-        {
-            TryPickupAmmo(weaponInRange);
-        }
+        //if (weaponInRange.name == "Ammo")
+        //{
+        //    TryPickupAmmo(weaponInRange);
+        //}
         else if (weapons.Count < weaponSlots.Length)
         {
             weaponInRange.transform.SetParent(WeaponHolder.transform);

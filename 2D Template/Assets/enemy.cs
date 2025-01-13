@@ -11,6 +11,7 @@ public class enemy : MonoBehaviour
     NavMeshAgent agent;
     float life=10;
     GameObject[] healers;
+    public GameObject AmmoPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +38,7 @@ public class enemy : MonoBehaviour
                 if (Vector3.Distance(healer.transform.position, transform.position) < 10)
                 {
 
-                    if (life <= 10)
+                    if (life < 10)
                     {
 
                         life += 2;
@@ -56,6 +57,14 @@ public class enemy : MonoBehaviour
         }
         if (life<=0) 
         {
+            int randomValue = Random.Range(1, 5);
+            if (randomValue == 3)
+            {
+                GameObject Ammo = Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
+                Ammo.name = AmmoPrefab.name;
+                Ammo.transform.position = gameObject.transform.position;
+            }
+            print(randomValue);
             Destroy(gameObject);
         }
     }

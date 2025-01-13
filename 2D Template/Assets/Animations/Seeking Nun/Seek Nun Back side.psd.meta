@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,133 +129,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Seek Nun Back side_0
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 36
-        width: 410
-        height: 744
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1b00894e64b00f4bbeeee59f48b6818
-      internalID: 1606452661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Seek Nun Back side_1
-      rect:
-        serializedVersion: 2
-        x: 418
-        y: 419
-        width: 318
-        height: 361
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03edc62a0c1d28c40a4f8968efd2ad73
-      internalID: 1904557294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Seek Nun Back side_2
-      rect:
-        serializedVersion: 2
-        x: 418
-        y: 95
-        width: 139
-        height: 313
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a9069fc42b16b94b908eedb7812d256
-      internalID: -1393749464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Seek Nun Back side_3
-      rect:
-        serializedVersion: 2
-        x: 619
-        y: 95
-        width: 139
-        height: 313
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 061ea9266abc8614d86ea0499a0b4907
-      internalID: -1300325362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Seek Nun Back side_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 76
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ca16e7da64f24b4ea23d6d8dd61eb2a
-      internalID: -2070192555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Seek Nun Back side_5
-      rect:
-        serializedVersion: 2
-        x: 414
-        y: 76
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0dcf75dbee4758d4197d347d0b3c0c1e
-      internalID: -493946181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -266,15 +140,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Seek Nun Back side_2: -1393749464
-      Seek Nun Back side_5: -493946181
-      Seek Nun Back side_1: 1904557294
-      Seek Nun Back side_0: 1606452661
-      Seek Nun Back side_4: -2070192555
-      Seek Nun Back side_3: -1300325362
+    nameFileIdTable: {}
   spritePackingTag: 
-  pSDRemoveMatte: 1
+  pSDRemoveMatte: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

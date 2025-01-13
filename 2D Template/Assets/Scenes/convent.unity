@@ -1581,6 +1581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1046052188}
+  AmmoPrefab: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
 --- !u!195 &501446301
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2174,6 +2175,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: healer
       objectReference: {fileID: 0}
+    - target: {fileID: 3646945268972198677, guid: 57e45322644d98f49a8dfbb20fbdb10c, type: 3}
+      propertyPath: AmmoPrefab
+      value: 
+      objectReference: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
     - target: {fileID: 3646945268972198679, guid: 57e45322644d98f49a8dfbb20fbdb10c, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2241,6 +2246,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1046052188}
+    - target: {fileID: 5025673060448223800, guid: 660dcfaabf34d534283469bdb6ea45f5, type: 3}
+      propertyPath: AmmoPrefab
+      value: 
+      objectReference: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 660dcfaabf34d534283469bdb6ea45f5, type: 3}
@@ -2572,37 +2581,7 @@ MonoBehaviour:
   Name: {fileID: 1619957136}
   MagAndAmmo: {fileID: 1722322024}
   WeaponHolder: {fileID: 1046052187}
---- !u!1 &1023469514
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1023469515}
-  m_Layer: 0
-  m_Name: Delete
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1023469515
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023469514}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1963101243}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  Image: {fileID: 0}
 --- !u!1001 &1046052184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4794,6 +4773,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: healer
       objectReference: {fileID: 0}
+    - target: {fileID: 3646945268972198677, guid: 57e45322644d98f49a8dfbb20fbdb10c, type: 3}
+      propertyPath: AmmoPrefab
+      value: 
+      objectReference: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 57e45322644d98f49a8dfbb20fbdb10c, type: 3}
@@ -5372,6 +5355,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: healer
       objectReference: {fileID: 0}
+    - target: {fileID: 3646945268972198677, guid: 57e45322644d98f49a8dfbb20fbdb10c, type: 3}
+      propertyPath: AmmoPrefab
+      value: 
+      objectReference: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 57e45322644d98f49a8dfbb20fbdb10c, type: 3}
@@ -5550,6 +5537,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: healer
       objectReference: {fileID: 0}
+    - target: {fileID: 3646945268972198677, guid: 57e45322644d98f49a8dfbb20fbdb10c, type: 3}
+      propertyPath: AmmoPrefab
+      value: 
+      objectReference: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 57e45322644d98f49a8dfbb20fbdb10c, type: 3}
@@ -6131,8 +6122,7 @@ Transform:
   m_LocalPosition: {x: -76.136505, y: 37.7302, z: 0}
   m_LocalScale: {x: 76.83867, y: 66.26396, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1023469515}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

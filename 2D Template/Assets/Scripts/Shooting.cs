@@ -17,6 +17,7 @@ public class Shooting : MonoBehaviour
     public float bulletForce = 20f;
     private bool canShoot = true;
     private bool isShooting = false;
+    public Sprite GunSprite;
     //public string GunName = "Gun";
 
 
@@ -56,7 +57,6 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator ShootBullet(GameObject bullet)
     {
-        CameraShake.instance.Shake(0.1f,0.025f,1f);
         yield return new WaitForSeconds(2f);
         Destroy(bullet);
     }
