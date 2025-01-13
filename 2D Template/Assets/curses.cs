@@ -19,7 +19,7 @@ public class curses : MonoBehaviour
         GameObject avatar = GameObject.FindGameObjectWithTag("Player1");
         if (Vector3.Distance(transform.position,avatar.transform.position)<15&&timer<=0) 
         {
-            timer = 350;
+            timer = 700;
             GameObject newcurse = Instantiate(curse);
             newcurse.transform.position = transform.position;
             Vector2 direction = avatar.transform.position - newcurse.transform.position;
