@@ -7,31 +7,33 @@ using UnityEngine.Rendering.Universal;
 
 public class enemy : MonoBehaviour
 {
-    public Transform target;
+    Transform target;
     NavMeshAgent agent;
     float life=10;
     GameObject[] healers;
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        if (gameObject.tag=="enemy")
+        {
 
-        
+
+            agent = GetComponent<NavMeshAgent>();
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+            agent.Warp(transform.position);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        target = GameObject.FindWithTag("Player1").transform;
         healers = GameObject.FindGameObjectsWithTag("healer");
-        if (gameObject.tag != "healer")
-        {
-            agent.SetDestination(target.position);
-        }
         if (gameObject.tag=="enemy")
         {
-
+            agent.destination=target.position;
             foreach (GameObject healer in healers)
             {
                 if (Vector3.Distance(healer.transform.position, transform.position) < 10)
