@@ -20,7 +20,6 @@ public class enemygeneration : MonoBehaviour
     public float vs;
 
     int round = -1;
-    [Tooltip("Number of enemies for each round")]
     public int[] rounds;
 
     private void Start()
@@ -91,7 +90,6 @@ public class enemygeneration : MonoBehaviour
     {
         Gizmos.color = Color.green;
 
-        // Draw a wire sphere around the transform's position (radius 5 for example)
         Gizmos.DrawWireSphere(transform.position, 2.5f);
 
     }
@@ -100,7 +98,6 @@ public class enemygeneration : MonoBehaviour
     {
         Gizmos.color = Color.red;
 
-        // Draw a wire cube representing the spawn area
         Gizmos.DrawWireCube(transform.position, new Vector3(hs, vs, 0));
     }
 
@@ -108,12 +105,24 @@ public class enemygeneration : MonoBehaviour
     [CustomEditor(typeof(enemygeneration))]
     public class EnemyGenerationEditor : Editor
     {
+        private int numberOfRounds;
+
         public override void OnInspectorGUI()
         {
-            // Draw the default inspector
-            DrawDefaultInspector();
+            enemygeneration script = (enemygeneration)target;
 
-            // Custom label for rounds array
+            DrawPropertiesExcluding(serializedObject, "rounds");
+
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("Rounds Configuration", EditorStyles.boldLabel);
+
+            numberOfRounds = EditorGUILayout.IntField("Number of Rounds", numberOfRounds);
+
+            if (GUILayout.Button("Set Number of Rounds"))
+            {
+                AdjustRoundsArray(script, numberOfRounds);
+            }
+
             SerializedProperty roundsProperty = serializedObject.FindProperty("rounds");
             for (int i = 0; i < roundsProperty.arraySize; i++)
             {
@@ -121,7 +130,22 @@ public class enemygeneration : MonoBehaviour
                 EditorGUILayout.PropertyField(round, new GUIContent($"Round {i + 1}"));
             }
 
-            // Apply any changes made in the Inspector
+            serializedObject.ApplyModifiedProperties();
+        }
+
+        private void AdjustRoundsArray(enemygeneration script, int newSize)
+        {
+            SerializedProperty roundsProperty = serializedObject.FindProperty("rounds");
+            roundsProperty.arraySize = newSize;
+
+            for (int i = 0; i < newSize; i++)
+            {
+                if (roundsProperty.GetArrayElementAtIndex(i).intValue == 0)
+                {
+                    roundsProperty.GetArrayElementAtIndex(i).intValue = 0;
+                }
+            }
+
             serializedObject.ApplyModifiedProperties();
         }
     }
@@ -140,15 +164,15 @@ public class enemygeneration : MonoBehaviour
 
 
 
-    //written by a shitty retard :DDDDDDDD
-    //everyone's stupid you're stupid I'm cr@@@ZY FUCK EVERYTHING FUCK THE UNIVERSE GO TO FUCKING HELL MOTHERFUCKER DAMNIT
-    //I'M @ $tUp1D @D0R@b13 5 Y3@r 01D, r0@$t m3 M0tH3RfUck3R LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL
-    //i'M @n IDi0t LOL FUCK YOU FUCK ME FUCK THE UNIVERSE LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL
-    //HEY MOTHERFUCKER ROAST ME MOTHERFUCKER I HATE YOU MOTHERFUCKER DAMMITDAMMIT II HATE MY FUCKING SELF
-    // I"M A sh1TtY LiL M0th3RfUCk3R Fr0M pR3-K, I @m cUt3 @Nd n@1v3 BLLBLBLBLBLBLBLBLLBLBLBLBLBLBLBLBLLBLBLBLBLBLBLBLB
-    //K1$$ m3 M0tHErFuCK3r h01D mY h@Nd m0TherFUck3r I'm a shiiiiityyyyy 3-year-old tard M0tHerFuCKer
-    //h01D My h@nD m0Th3RfUCk3R fUcK mY$31f
-    //Ima sTUpId lIl b0y weewewewewewewe lolololololololollolololol
-    //yopu are sooooooooooooooooooooooooooooooooooooooooooooo0o0o0o0o0o0ooo0oo0o0oo0o0o0o0o CUUUUUTEETEEE
-    //YOU NAIVE LITTLE SHIITTTING MOTHERFUCKOING DAMN FUCKKING ASSHOLE TARD SHIIT CRAP 5-yE@r 01D
-    //
+//written by a shitty retard :DDDDDDDD
+//everyone's stupid you're stupid I'm cr@@@ZY FUCK EVERYTHING FUCK THE UNIVERSE GO TO FUCKING HELL MOTHERFUCKER DAMNIT
+//I'M @ $tUp1D @D0R@b13 5 Y3@r 01D, r0@$t m3 M0tH3RfUck3R LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL
+//i'M @n IDi0t LOL FUCK YOU FUCK ME FUCK THE UNIVERSE LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL
+//HEY MOTHERFUCKER ROAST ME MOTHERFUCKER I HATE YOU MOTHERFUCKER DAMMITDAMMIT II HATE MY FUCKING SELF
+// I"M A sh1TtY LiL M0th3RfUCk3R Fr0M pR3-K, I @m cUt3 @Nd n@1v3 BLLBLBLBLBLBLBLBLLBLBLBLBLBLBLBLBLLBLBLBLBLBLBLBLB
+//K1$$ m3 M0tHErFuCK3r h01D mY h@Nd m0TherFUck3r I'm a shiiiiityyyyy 3-year-old tard M0tHerFuCKer
+//h01D My h@nD m0Th3RfUCk3R fUcK mY$31f
+//Ima sTUpId lIl b0y weewewewewewewe lolololololololollolololol
+//yopu are sooooooooooooooooooooooooooooooooooooooooooooo0o0o0o0o0o0ooo0oo0o0oo0o0o0o0o CUUUUUTEETEEE
+//YOU NAIVE LITTLE SHIITTTING MOTHERFUCKOING DAMN FUCKKING ASSHOLE TARD SHIIT CRAP 5-yE@r 01D
+//
