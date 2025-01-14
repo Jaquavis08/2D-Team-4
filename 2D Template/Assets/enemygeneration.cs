@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -11,32 +12,36 @@ public class enemygeneration : MonoBehaviour
     public GameObject cursenun;
     public GameObject attacknun;
     public GameObject healernun;
-    float minstep;
-    float maxstep;
+
+    public float minstep = 3f;
+    public float maxstep = 7f;
+
     public float hs;
     public float vs;
-    int round=-1;
+
+    int round = -1;
+    [Tooltip("Number of enemies for each round")]
     public int[] rounds;
+
     private void Start()
     {
-        minstep = 3;
-        maxstep = 7;
+
     }
-    void Generate(float hspan,float vspan,int enemylimit)
+    void Generate(float hspan, float vspan, int enemylimit)
     {
-        float enemies=enemylimit;
-        float atckenemies = Mathf.Floor(enemies*UnityEngine.Random.Range(0.5f, 0.8f));
-        Vector3 spawn;
-        spawn = new Vector3(transform.position.x - hspan / 2, transform.position.y + vspan / 2, 0);
-        while (spawn.y > transform.position.y - vspan/2)
+        float enemies = enemylimit;
+        float atckenemies = Mathf.Floor(enemies * UnityEngine.Random.Range(0.5f, 0.8f));
+        Vector3 spawn = new Vector3(transform.position.x - hspan / 2, transform.position.y + vspan / 2, 0); ;
+        
+        while (spawn.y > transform.position.y - vspan / 2)
         {
-            spawn += new Vector3(UnityEngine.Random.Range(minstep, maxstep), 0, 0);
+            spawn += new Vector3(UnityEngine.Random.Range(minstep, maxstep), 0 , 0);
             if (spawn.x - transform.position.x > hspan / 2)
             {
                 spawn = new Vector3(transform.position.x + hspan / 2, spawn.y, 0);
             }
             GameObject newenemy;
-            if (atckenemies==0)
+            if (atckenemies == 0)
             {
 
                 newenemy = Instantiate(cursenun);
@@ -48,9 +53,9 @@ public class enemygeneration : MonoBehaviour
             }
 
             enemies -= 1;
-            if (atckenemies>0)
+            if (atckenemies > 0)
             {
-                Debug.Log("atckenemeies: "+atckenemies);
+                Debug.Log("atckenemeies: " + atckenemies);
                 atckenemies -= 1;
             }
             newenemy.transform.position = spawn;
@@ -58,7 +63,7 @@ public class enemygeneration : MonoBehaviour
             {
                 spawn = new Vector3(transform.position.x - hspan / 2, spawn.y - UnityEngine.Random.Range(minstep, maxstep), 0);
             }
-            if (enemies==0)
+            if (enemies == 0)
             {
                 break;
             }
@@ -68,11 +73,11 @@ public class enemygeneration : MonoBehaviour
     {
         foreach (Transform newhealerpos in healerPositions)
         {
-            GameObject newhealer=Instantiate(healernun);
+            GameObject newhealer = Instantiate(healernun);
             newhealer.transform.position = newhealerpos.position;
         }
     }
-    void Update() 
+    void Update()
     {
         if (FindObjectsOfType<enemy>().Length == 0)
         {
@@ -84,17 +89,44 @@ public class enemygeneration : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.green;
 
-        Gizmos.DrawWireSphere(transform.position, );
+        // Draw a wire sphere around the transform's position (radius 5 for example)
+        Gizmos.DrawWireSphere(transform.position, 2.5f);
+
     }
 
     private void OnDrawGizmosSelected()
     {
-        
+        Gizmos.color = Color.red;
+
+        // Draw a wire cube representing the spawn area
+        Gizmos.DrawWireCube(transform.position, new Vector3(hs, vs, 0));
     }
 
+#if UNITY_EDITOR
+    [CustomEditor(typeof(enemygeneration))]
+    public class EnemyGenerationEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            // Draw the default inspector
+            DrawDefaultInspector();
 
+            // Custom label for rounds array
+            SerializedProperty roundsProperty = serializedObject.FindProperty("rounds");
+            for (int i = 0; i < roundsProperty.arraySize; i++)
+            {
+                SerializedProperty round = roundsProperty.GetArrayElementAtIndex(i);
+                EditorGUILayout.PropertyField(round, new GUIContent($"Round {i + 1}"));
+            }
+
+            // Apply any changes made in the Inspector
+            serializedObject.ApplyModifiedProperties();
+        }
+    }
+#endif
+}
 
 
 
@@ -120,5 +152,3 @@ public class enemygeneration : MonoBehaviour
     //yopu are sooooooooooooooooooooooooooooooooooooooooooooo0o0o0o0o0o0ooo0oo0o0oo0o0o0o0o CUUUUUTEETEEE
     //YOU NAIVE LITTLE SHIITTTING MOTHERFUCKOING DAMN FUCKKING ASSHOLE TARD SHIIT CRAP 5-yE@r 01D
     //
-
-}
