@@ -50,7 +50,6 @@ public class WeaponPickedup : MonoBehaviour
     {
         if (collision.gameObject.name == "Ammo")
         {
-            print("pdwa");
             TryPickupAmmo(collision.gameObject);
         }
     }
@@ -82,8 +81,7 @@ public class WeaponPickedup : MonoBehaviour
     void TryPickupAmmo(GameObject ammo)
     {
         float distance = Vector3.Distance(transform.position, ammo.transform.position);
-        print(distance + "DWWDAWDWA");
-        if (distance <= 4.5f)
+        if (distance <= 100f)
         {
             print(distance);
             Shooting.Instance.Ammo += UnityEngine.Random.Range(5, 20);
