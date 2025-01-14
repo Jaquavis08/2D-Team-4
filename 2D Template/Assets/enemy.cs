@@ -7,6 +7,7 @@ using UnityEngine.Rendering.Universal;
 
 public class enemy : MonoBehaviour
 {
+
     public Transform target;
     NavMeshAgent agent;
     float life=10;
@@ -22,9 +23,15 @@ public class enemy : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+            DontDestroyOnLoad(gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        target = GameObject.Find("Player").transform;
         healers = GameObject.FindGameObjectsWithTag("healer");
         if (gameObject.tag != "healer")
         {
@@ -48,6 +55,8 @@ public class enemy : MonoBehaviour
         }
         Debug.Log(life);
     }
+
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
