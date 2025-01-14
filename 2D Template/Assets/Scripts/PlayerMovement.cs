@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
             MovementInvert = false;
         }
 
-        MinTime += 1f * Time.deltaTime;
+        //MinTime += 1f * Time.deltaTime;
         if(MinTime >= MaxTime)
         {
             MinTime = 0;

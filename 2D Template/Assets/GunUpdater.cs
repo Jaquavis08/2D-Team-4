@@ -11,6 +11,7 @@ public class GunUpdater : MonoBehaviour
     public TMP_Text MagAndAmmo;
     public GameObject WeaponHolder;
     public GameObject Image;
+    public Sprite Flashlight;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class GunUpdater : MonoBehaviour
             {
                 Name.text = "Flashlight";
                 MagAndAmmo.text = "0/0";
-                Image.GetComponent<Image>().sprite = null;
+                Image.GetComponent<Image>().sprite = Flashlight;
             }
             else
             {
