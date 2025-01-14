@@ -7,7 +7,8 @@ using UnityEngine.Rendering.Universal;
 
 public class enemy : MonoBehaviour
 {
-    Transform target;
+
+    public Transform target;
     NavMeshAgent agent;
     float life=10;
     GameObject[] healers;
@@ -15,26 +16,30 @@ public class enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameObject.tag=="enemy")
-        {
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
 
+        
+    }
 
-            agent = GetComponent<NavMeshAgent>();
-            agent.updateRotation = false;
-            agent.updateUpAxis = false;
-            agent.Warp(transform.position);
-        }
+    private void Awake()
+    {
+            DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        target = GameObject.FindWithTag("Player1").transform;
+        target = GameObject.Find("Player").transform;
         healers = GameObject.FindGameObjectsWithTag("healer");
+        if (gameObject.tag != "healer")
+        {
+            agent.SetDestination(target.position);
+        }
         if (gameObject.tag=="enemy")
         {
-            agent.destination=target.position;
+
             foreach (GameObject healer in healers)
             {
                 if (Vector3.Distance(healer.transform.position, transform.position) < 10)
@@ -50,6 +55,8 @@ public class enemy : MonoBehaviour
         }
         Debug.Log(life);
     }
+
+
 
     void OnTriggerEnter2D(Collider2D other)
     {

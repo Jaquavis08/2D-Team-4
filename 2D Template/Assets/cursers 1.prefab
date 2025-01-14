@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2310902246598431091}
   - component: {fileID: 3591845402365655390}
   m_Layer: 0
-  m_Name: cursers
+  m_Name: cursers 1
   m_TagString: curser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,6 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e676839f60f7cdc4abeee0c1cebed3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  AmmoPrefab: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
 --- !u!114 &2310902246598431091
 MonoBehaviour:
   m_ObjectHideFlags: 0
