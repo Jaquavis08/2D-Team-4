@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 3646945268972198677}
   - component: {fileID: 3646945268972198676}
   m_Layer: 0
-  m_Name: healer
+  m_Name: healer 1
   m_TagString: healer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,6 +505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e676839f60f7cdc4abeee0c1cebed3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  AmmoPrefab: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
 --- !u!60 &3646945268972198676
 PolygonCollider2D:
   m_ObjectHideFlags: 0

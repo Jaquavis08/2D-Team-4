@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 5025673060448223800}
   - component: {fileID: 5025673060448223802}
   m_Layer: 0
-  m_Name: physical attackers
+  m_Name: physical attackers 1
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,6 +294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e676839f60f7cdc4abeee0c1cebed3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  AmmoPrefab: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
 --- !u!60 &5025673060448223802
 PolygonCollider2D:
   m_ObjectHideFlags: 0
