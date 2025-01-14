@@ -22,6 +22,8 @@ public class enemygeneration : MonoBehaviour
     int round = -1;
     public int[] rounds;
 
+    public bool DrawRangeWhenSelectedGizmo;
+
     private void Start()
     {
 
@@ -92,13 +94,23 @@ public class enemygeneration : MonoBehaviour
 
         Gizmos.DrawWireSphere(transform.position, 2.5f);
 
+        if(DrawRangeWhenSelectedGizmo == false)
+        {
+            Gizmos.color = Color.red;
+
+            Gizmos.DrawWireCube(transform.position, new Vector3(hs, vs, 0));
+        }
+
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
+        if(DrawRangeWhenSelectedGizmo == true)
+        {
+            Gizmos.color = Color.red;
 
-        Gizmos.DrawWireCube(transform.position, new Vector3(hs, vs, 0));
+            Gizmos.DrawWireCube(transform.position, new Vector3(hs, vs, 0));
+        }
     }
 
 #if UNITY_EDITOR
