@@ -17,6 +17,7 @@ public class Shooting : MonoBehaviour
     public float bulletForce = 20f;
     private bool canShoot = true;
     private bool isShooting = false;
+    public Sprite GunSprite;
     //public string GunName = "Gun";
 
 

@@ -50,6 +50,7 @@ public class WeaponPickedup : MonoBehaviour
     {
         if (collision.gameObject.name == "Ammo")
         {
+            print("pdwa");
             TryPickupAmmo(collision.gameObject);
         }
     }
@@ -63,11 +64,11 @@ public class WeaponPickedup : MonoBehaviour
         {
             if (collider.CompareTag("Weapon") && collider.transform.parent != WeaponHolder.transform)
             {
-                if (collider.name == "Ammo")
-                {
-                    TryPickupAmmo(collider.gameObject);
-                    return;
-                }
+                //if (collider.name == "Ammo")
+                //{
+                //    TryPickupAmmo(collider.gameObject);
+                //    return;
+                //}
 
                 weaponInRange = collider.gameObject;
                 ShowPickupPrompt(weaponInRange.name);
@@ -81,8 +82,10 @@ public class WeaponPickedup : MonoBehaviour
     void TryPickupAmmo(GameObject ammo)
     {
         float distance = Vector3.Distance(transform.position, ammo.transform.position);
-        if (distance <= 1.2f)
+        print(distance + "DWWDAWDWA");
+        if (distance <= 4.5f)
         {
+            print(distance);
             Shooting.Instance.Ammo += UnityEngine.Random.Range(5, 20);
             Destroy(ammo);
         }
@@ -92,8 +95,18 @@ public class WeaponPickedup : MonoBehaviour
     {
         if (pickupUIPrompt != null)
         {
-            pickupUIPrompt.GetComponent<TMP_Text>().SetText($"Press [E] To Pick Up: {weaponName}");
-            pickupUIPrompt.SetActive(true);
+            if (weaponName == "Ammo")
+            {
+                pickupUIPrompt.GetComponent<TMP_Text>().SetText($"Pick Up: {weaponName}");
+                pickupUIPrompt.SetActive(true);
+                return;
+            }
+            else
+            {
+                pickupUIPrompt.GetComponent<TMP_Text>().SetText($"Press [E] To Pick Up: {weaponName}");
+                pickupUIPrompt.SetActive(true);
+                return;
+            }
         }
     }
 
@@ -111,7 +124,7 @@ public class WeaponPickedup : MonoBehaviour
 
         if (weaponInRange.name == "Ammo")
         {
-            TryPickupAmmo(weaponInRange);
+            TryPickupAmmo(weaponInRange.gameObject);
         }
         else if (weapons.Count < weaponSlots.Length)
         {

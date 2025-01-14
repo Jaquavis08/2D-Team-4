@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class LightFlicker : MonoBehaviour
 {
-    [SerializeField] private Light2D light;
+    private Light2D light;
 
     private int frames = 0;
 
@@ -15,6 +15,10 @@ public class LightFlicker : MonoBehaviour
     [SerializeField] private float minValue;
     [SerializeField] private float maxValue;
 
+    private void Start()
+    {
+        light = GetComponent<Light2D>();
+    }
 
     // Update is called once per frame
     void Update()
