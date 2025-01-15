@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5285e084ace41b34183a2f14606675d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curse: {fileID: 2981011899866731744, guid: a12d976d10162254c862bfc0a74e89fc, type: 3}
+  curse: {fileID: 7556025190451737385, guid: d59969b1a5d5a5f45ae97d98fe8474d6, type: 3}
 --- !u!60 &3591845402365655390
 PolygonCollider2D:
   m_ObjectHideFlags: 0
