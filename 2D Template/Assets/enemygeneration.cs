@@ -19,10 +19,10 @@ public class enemygeneration : MonoBehaviour
     public float hs;
     public float vs;
 
+    public bool DrawRangeWhenSelectedGizmo;
+
     int round = -1;
     public int[] rounds;
-
-    public bool DrawRangeWhenSelectedGizmo;
 
     private void Start()
     {
