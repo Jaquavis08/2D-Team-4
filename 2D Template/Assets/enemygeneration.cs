@@ -8,10 +8,9 @@ using UnityEngine.Rendering.Universal;
 
 public class enemygeneration : MonoBehaviour
 {
-    public Transform[] healerPositions;
+
     public GameObject cursenun;
     public GameObject attacknun;
-    public GameObject healernun;
 
     public float minstep = 3f;
     public float maxstep = 7f;
@@ -20,15 +19,13 @@ public class enemygeneration : MonoBehaviour
     public float vs;
 
     public bool DrawRangeWhenSelectedGizmo;
-
-    int round = -1;
     public int[] rounds;
 
     private void Start()
     {
 
     }
-    void Generate(float hspan, float vspan, int enemylimit)
+    public void Generate(float hspan, float vspan, int enemylimit)
     {
         float enemies = enemylimit;
         float atckenemies = Mathf.Floor(enemies * UnityEngine.Random.Range(0.5f, 0.8f));
@@ -68,23 +65,6 @@ public class enemygeneration : MonoBehaviour
             {
                 break;
             }
-        }
-    }
-    void RefreshHealers()
-    {
-        foreach (Transform newhealerpos in healerPositions)
-        {
-            GameObject newhealer = Instantiate(healernun);
-            newhealer.transform.position = newhealerpos.position;
-        }
-    }
-    void Update()
-    {
-        if (FindObjectsOfType<enemy>().Length == 0)
-        {
-            round++;
-            Generate(hs, vs, rounds[round]);
-            RefreshHealers();
         }
     }
 

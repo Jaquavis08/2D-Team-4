@@ -107,7 +107,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b6531db87938d3d48a9dccccdf7b6c79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
   BulletCooldown: 0.21
   ReloadCooldown: 1
   bulletForce: 70
+  GunSprite: {fileID: 0}
 --- !u!114 &5785099112973690518
 MonoBehaviour:
   m_ObjectHideFlags: 0

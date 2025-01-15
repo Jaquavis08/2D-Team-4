@@ -7,19 +7,21 @@ using UnityEngine.Rendering.Universal;
 
 public class enemy : MonoBehaviour
 {
-
     public Transform target;
     NavMeshAgent agent;
     float life=10;
     GameObject[] healers;
     public GameObject AmmoPrefab;
+    SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
     {
+        sr= GetComponent<SpriteRenderer>();
+
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-
+        agent.Warp(transform.position);
         
     }
 
