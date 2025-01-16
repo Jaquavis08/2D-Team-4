@@ -148,7 +148,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37318695}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 1.446, y: 2.992185, z: 0.02453777}
+=======
+  m_LocalPosition: {x: 1.4398618, y: 2.992185, z: 0.024537768}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -195,8 +199,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_SortingOrder: 10
   m_Sprite: {fileID: -1537053254, guid: 740935158381c974495196797ab016a2, type: 3}
+=======
+  m_SortingOrder: 9
+  m_Sprite: {fileID: -1537053254, guid: 2f7984e278afd734ea2fe42e743416a0, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,7 +213,11 @@ SpriteRenderer:
   m_Size: {x: 0.23, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &79423376
@@ -232,11 +245,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79423376}
   m_LocalRotation: {x: -0, y: -0, z: -0.001651777, w: -0.9999987}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: -6.38, y: -1.2, z: -0.2280889}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 694639862}
+=======
+  m_LocalPosition: {x: -4.41, y: -1.34, z: -0.22808889}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Father: {fileID: 1724825001}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.189}
@@ -280,16 +300,28 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_SortingOrder: 6
   m_Sprite: {fileID: 2053633914, guid: 94f1856000745a5488b01f1e47874cf6, type: 3}
+=======
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 2053633914, guid: 9ae39fce8d338c741984bb74c6773954, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Size: {x: 0.81, y: 1.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+=======
+  m_Size: {x: 1.41, y: 2.96}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &395000628
@@ -317,8 +349,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395000628}
   m_LocalRotation: {x: -0.00000018725324, y: -3.2314865e-10, z: 0.0017257275, w: 0.99999857}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: -6.79, y: -0.55, z: -0.23}
   m_LocalScale: {x: 0.9876, y: 0.9404, z: 1}
+=======
+  m_LocalPosition: {x: -5.6, y: -0.47, z: -0.22808889}
+  m_LocalScale: {x: 0.98759997, y: 0.9404, z: 1}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1724825001}
@@ -364,16 +401,28 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_SortingOrder: 3
   m_Sprite: {fileID: 1940385507, guid: 94f1856000745a5488b01f1e47874cf6, type: 3}
+=======
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 1940385507, guid: 9ae39fce8d338c741984bb74c6773954, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Size: {x: 1.43, y: 2.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+=======
+  m_Size: {x: 3.32, y: 3}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &462706101
@@ -401,7 +450,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462706101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 5.987, y: -0.4049, z: -0.2230001}
+=======
+  m_LocalPosition: {x: 5.9869995, y: -0.4049, z: -0.22300008}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 0.8806, y: 0.9138, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -449,7 +502,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: -1393749464, guid: 2e42bf8462a9a5e4692c1def12426512, type: 3}
+=======
+  m_Sprite: {fileID: -1393749464, guid: 6a21460a028d6e542a71249bce168c7c, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -457,7 +514,11 @@ SpriteRenderer:
   m_Size: {x: 1.39, y: 3.13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &543121969
@@ -485,7 +546,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543121969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 1.730862, y: 2.9951851, z: 0.02453777}
+=======
+  m_LocalPosition: {x: 1.7308618, y: 2.9951851, z: 0.024537768}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -533,7 +598,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: 1185658160, guid: 740935158381c974495196797ab016a2, type: 3}
+=======
+  m_Sprite: {fileID: 1185658160, guid: 2f7984e278afd734ea2fe42e743416a0, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -541,6 +610,7 @@ SpriteRenderer:
   m_Size: {x: 1.17, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -626,6 +696,9 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &630783536
@@ -653,7 +726,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630783536}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 3.239862, y: 0.33218506, z: 0.02453777}
+=======
+  m_LocalPosition: {x: 3.2398617, y: 0.33218506, z: 0.024537768}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -701,7 +778,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: 832808656, guid: 740935158381c974495196797ab016a2, type: 3}
+=======
+  m_Sprite: {fileID: 832808656, guid: 2f7984e278afd734ea2fe42e743416a0, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -709,7 +790,11 @@ SpriteRenderer:
   m_Size: {x: 1.9, y: 3.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &667921855
@@ -737,7 +822,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667921855}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 7.15, y: 1.7199999, z: -0.2230001}
+=======
+  m_LocalPosition: {x: 7.1499996, y: 1.7199999, z: -0.22300008}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -785,7 +874,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: 1904557294, guid: 2e42bf8462a9a5e4692c1def12426512, type: 3}
+=======
+  m_Sprite: {fileID: 1904557294, guid: 6a21460a028d6e542a71249bce168c7c, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -793,7 +886,11 @@ SpriteRenderer:
   m_Size: {x: 3.18, y: 3.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &694639861
@@ -820,12 +917,21 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694639861}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalRotation: {x: 0, y: -0, z: -0.0009223622, w: -0.99999964}
   m_LocalPosition: {x: -0.017093224, y: 0.8800614, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 79423377}
+=======
+  m_LocalRotation: {x: -0, y: -0, z: 0.002574137, w: 0.9999967}
+  m_LocalPosition: {x: -11.82, y: 0.58, z: -0.22808889}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1724825001}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.295}
 --- !u!212 &694639863
@@ -868,16 +974,28 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_SortingOrder: 7
   m_Sprite: {fileID: -1874028311, guid: 94f1856000745a5488b01f1e47874cf6, type: 3}
+=======
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -1874028311, guid: 9ae39fce8d338c741984bb74c6773954, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Size: {x: 0.63, y: 1.03}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+=======
+  m_Size: {x: 1.43, y: 2.94}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &757074488
@@ -904,14 +1022,23 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757074488}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalRotation: {x: -0, y: -0, z: -0.0029791798, w: -0.9999956}
   m_LocalPosition: {x: -8.62, y: -0.58, z: -0.2280889}
+=======
+  m_LocalRotation: {x: -0, y: -0, z: 0.16028537, w: 0.9870707}
+  m_LocalPosition: {x: -7.04, y: -0.63, z: -0.22808889}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1724825001}
   m_RootOrder: -1
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.341}
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 18.447}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
 --- !u!212 &757074490
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -952,8 +1079,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_SortingOrder: 3
   m_Sprite: {fileID: 1226486755, guid: 94f1856000745a5488b01f1e47874cf6, type: 3}
+=======
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1226486755, guid: 9ae39fce8d338c741984bb74c6773954, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -961,7 +1093,11 @@ SpriteRenderer:
   m_Size: {x: 1.43, y: 2.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &884527316
@@ -989,7 +1125,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884527316}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 1.349862, y: 0.862185, z: 0.02453777}
+=======
+  m_LocalPosition: {x: 1.3498617, y: 0.862185, z: 0.024537768}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1037,7 +1177,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: 1216853687, guid: 740935158381c974495196797ab016a2, type: 3}
+=======
+  m_Sprite: {fileID: 1216853687, guid: 2f7984e278afd734ea2fe42e743416a0, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1045,7 +1189,11 @@ SpriteRenderer:
   m_Size: {x: 2.15, y: 2.01}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1020224232
@@ -1073,7 +1221,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020224232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: -7.72, y: 1.7, z: -0.2280889}
+=======
+  m_LocalPosition: {x: -7.08, y: 3.97, z: -0.22808889}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1121,7 +1273,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: 1946094564, guid: 94f1856000745a5488b01f1e47874cf6, type: 3}
+=======
+  m_Sprite: {fileID: 1946094564, guid: 9ae39fce8d338c741984bb74c6773954, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1129,7 +1285,11 @@ SpriteRenderer:
   m_Size: {x: 1.23, y: 1.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1121218932
@@ -1157,7 +1317,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121218932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 2.366793, y: -0.9954215, z: 0.02453777}
+=======
+  m_LocalPosition: {x: 2.366793, y: -0.9954215, z: 0.024537768}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1205,7 +1369,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: -837006658, guid: 740935158381c974495196797ab016a2, type: 3}
+=======
+  m_Sprite: {fileID: -837006658, guid: 2f7984e278afd734ea2fe42e743416a0, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1213,7 +1381,11 @@ SpriteRenderer:
   m_Size: {x: 2.86, y: 7.47}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1287471132
@@ -1343,7 +1515,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1374783438}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   - component: {fileID: 1374783439}
+=======
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Layer: 0
   m_Name: Side side
   m_TagString: Untagged
@@ -1375,6 +1550,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
 --- !u!95 &1374783439
 Animator:
   serializedVersion: 4
@@ -1395,6 +1571,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+=======
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
 --- !u!1 &1376986839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,7 +1598,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376986839}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 2.066862, y: 2.792185, z: 0.02453777}
+=======
+  m_LocalPosition: {x: 2.0668619, y: 2.792185, z: 0.024537768}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1468,7 +1650,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: 511939348, guid: 740935158381c974495196797ab016a2, type: 3}
+=======
+  m_Sprite: {fileID: 511939348, guid: 2f7984e278afd734ea2fe42e743416a0, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1476,7 +1662,11 @@ SpriteRenderer:
   m_Size: {x: 1.57, y: 2.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1414993782
@@ -1504,7 +1694,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414993782}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 7.21, y: -1.807806, z: -0.2230001}
+=======
+  m_LocalPosition: {x: 7.21, y: -1.8078064, z: -0.22300008}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1552,7 +1746,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: 1606452661, guid: 2e42bf8462a9a5e4692c1def12426512, type: 3}
+=======
+  m_Sprite: {fileID: 1606452661, guid: 6a21460a028d6e542a71249bce168c7c, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1560,7 +1758,11 @@ SpriteRenderer:
   m_Size: {x: 4.1, y: 7.44}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1544272909
@@ -1588,7 +1790,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544272909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 8.219999, y: -0.35000002, z: -0.2230001}
+=======
+  m_LocalPosition: {x: 8.219999, y: -0.35000002, z: -0.22300008}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 0.8806, y: 0.9138, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1636,7 +1842,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: -1300325362, guid: 2e42bf8462a9a5e4692c1def12426512, type: 3}
+=======
+  m_Sprite: {fileID: -1300325362, guid: 6a21460a028d6e542a71249bce168c7c, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1644,7 +1854,11 @@ SpriteRenderer:
   m_Size: {x: 1.39, y: 3.13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1669224954
@@ -1672,7 +1886,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669224954}
   m_LocalRotation: {x: -0, y: -0, z: 0.14454103, w: 0.98949885}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: -0.7821381, y: 0.839185, z: 0.02453777}
+=======
+  m_LocalPosition: {x: -0.7821381, y: 0.839185, z: 0.024537768}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1720,7 +1938,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: -1384224983, guid: 740935158381c974495196797ab016a2, type: 3}
+=======
+  m_Sprite: {fileID: -1384224983, guid: 2f7984e278afd734ea2fe42e743416a0, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1728,6 +1950,7 @@ SpriteRenderer:
   m_Size: {x: 0.62, y: 0.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -1813,6 +2036,9 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1724825000
@@ -1824,7 +2050,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1724825001}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   - component: {fileID: 1724825002}
+=======
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Layer: 0
   m_Name: Front Side
   m_TagString: Untagged
@@ -1847,10 +2076,15 @@ Transform:
   - {fileID: 1737721223}
   - {fileID: 1020224233}
   - {fileID: 1926472990}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
+=======
+  - {fileID: 694639862}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   - {fileID: 79423377}
   - {fileID: 395000629}
   - {fileID: 1991621448}
   - {fileID: 757074489}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   - {fileID: 1683040790}
   - {fileID: 569904366}
   m_Father: {fileID: 0}
@@ -1876,6 +2110,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
 --- !u!1 &1737721222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +2140,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737721222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: -7.729, y: 1.57, z: -0.2280889}
+=======
+  m_LocalPosition: {x: -6.22, y: 3.45, z: -0.22808889}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1948,16 +2191,28 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_SortingOrder: 13
   m_Sprite: {fileID: -1920331645, guid: 94f1856000745a5488b01f1e47874cf6, type: 3}
+=======
+  m_SortingOrder: 5
+  m_Sprite: {fileID: -1920331645, guid: 9ae39fce8d338c741984bb74c6773954, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Size: {x: 0.82, y: 0.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+=======
+  m_Size: {x: 4.02, y: 7.79}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1764421075
@@ -1985,7 +2240,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764421075}
   m_LocalRotation: {x: -0, y: -0, z: 0.18914455, w: 0.9819493}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 0.5159618, y: 0.4790851, z: 0.02453777}
+=======
+  m_LocalPosition: {x: 0.51596177, y: 0.47908506, z: 0.024537768}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1.0338341, y: 0.959427, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2033,7 +2292,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: 2083786267, guid: 740935158381c974495196797ab016a2, type: 3}
+=======
+  m_Sprite: {fileID: 2083786267, guid: 2f7984e278afd734ea2fe42e743416a0, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2041,7 +2304,11 @@ SpriteRenderer:
   m_Size: {x: 1.89, y: 1.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1827212012
@@ -2069,7 +2336,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827212012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: 2.349862, y: 2.362185, z: 0.02453777}
+=======
+  m_LocalPosition: {x: 2.3498619, y: 2.362185, z: 0.024537768}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2116,8 +2387,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_SortingOrder: 11
   m_Sprite: {fileID: 1889920091, guid: 740935158381c974495196797ab016a2, type: 3}
+=======
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 1889920091, guid: 2f7984e278afd734ea2fe42e743416a0, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2125,7 +2401,11 @@ SpriteRenderer:
   m_Size: {x: 1.97, y: 3.34}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1926472989
@@ -2153,7 +2433,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926472989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: -7.55, y: 0.96, z: -0.2280889}
+=======
+  m_LocalPosition: {x: -3.9, y: 4.08, z: -0.22808889}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2201,15 +2485,26 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Sprite: {fileID: 1003961867, guid: 94f1856000745a5488b01f1e47874cf6, type: 3}
+=======
+  m_Sprite: {fileID: 1003961867, guid: 9ae39fce8d338c741984bb74c6773954, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Size: {x: 3.6, y: 3.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+=======
+  m_Size: {x: 3.35, y: 3.91}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1954606453
@@ -2221,7 +2516,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1954606454}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   - component: {fileID: 1954606455}
+=======
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Layer: 0
   m_Name: Back Side
   m_TagString: Untagged
@@ -2237,7 +2535,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954606453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: -0.01, y: 0.85, z: 0.2230001}
+=======
+  m_LocalPosition: {x: -0.01, y: 0.85, z: 0.22300008}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2248,6 +2550,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
 --- !u!95 &1954606455
 Animator:
   serializedVersion: 4
@@ -2268,6 +2571,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+=======
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
 --- !u!1 &1991621447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,7 +2598,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991621447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_LocalPosition: {x: -7.73, y: -2.38, z: -0.2280889}
+=======
+  m_LocalPosition: {x: -6.51, y: -2.37, z: -0.22808889}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2340,15 +2649,27 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_SortingOrder: 5
   m_Sprite: {fileID: 1617903874, guid: 94f1856000745a5488b01f1e47874cf6, type: 3}
+=======
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 1617903874, guid: 9ae39fce8d338c741984bb74c6773954, type: 3}
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD:2D Template/Assets/NEW animation/Seeking Nun/Seeking Nun.unity
   m_Size: {x: 2.86, y: 7.47}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+=======
+  m_Size: {x: 0.82, y: 0.28}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+>>>>>>> 2a46d0e (idk this was there):2D Template/Assets/Animations/Seeking Nun/Seeking Nun.unity
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
