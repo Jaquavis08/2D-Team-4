@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 2981011899866731745}
   - component: {fileID: 5871557018659071263}
   - component: {fileID: 7315868790440549319}
+  - component: {fileID: 5251113865479954708}
   m_Layer: 0
   m_Name: curse
   m_TagString: curse
@@ -184,6 +185,18 @@ CircleCollider2D:
   m_Offset: {x: 0.022844644, y: 0.14854914}
   serializedVersion: 2
   m_Radius: 1.3113331
+--- !u!114 &5251113865479954708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981011899866731744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cf588d9c882114dae5ee6cb77ecdc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2981011900060792422
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,19 +18,20 @@ public class healthbar : MonoBehaviour
     public GameObject Pivot;
     public GameObject percent;
     public GameObject GameOver;
-    public float PassiveHealValue;
     void Start()
     {
         life = 100;
         life = lifemax;
         GameOver.SetActive(false);
+        life = 100;
+        life = lifemax;
         StartCoroutine(PassiveHeal());
     }
 
     IEnumerator PassiveHeal()
     {
-        yield return new WaitForSeconds(5);
-        Heal(PassiveHealValue);
+        yield return new WaitForSeconds(15);
+        Heal(5);
         StartCoroutine(PassiveHeal());
 
     }
