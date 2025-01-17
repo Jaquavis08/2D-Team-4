@@ -20,4 +20,8 @@ public class generation : MonoBehaviour
             }
         }
     }
+    public int GetRound()
+    {
+        return round;
+    }
 }
