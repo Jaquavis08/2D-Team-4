@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject JumpScare;
 
     [SerializeField] private float moveSpeed = 5f;
-    public TMP_Text MoveValueText;
 
     private Vector2 movement;
     private Rigidbody2D rb;
@@ -29,9 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D weaponRb;
     [SerializeField] private Sprite playerBack;
     [SerializeField] private Sprite playerFront;
-    [SerializeField] private GameObject playerGFX;
-    private Renderer playerRenderer;
-    public Color originalColor;
+    public GameObject playerGFX;
 
     [SerializeField] private Transform firepoint;
     [SerializeField] private Vector3 firepointOffset = new Vector3(-7.11f, 1.03f, 0);
@@ -79,38 +75,7 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = movement.x > 0;
         }
 
-        if(Input.GetKeyDown(KeyCode.Z))
-        {
-            moveSpeed -= 1f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            moveSpeed += 1f;
-        }
-
-        if(Input.GetKey(KeyCode.C))
-        {
-            MoveValueText.text = "Speed = " + moveSpeed;
-            MoveValueText.gameObject.SetActive(true);
-        }
-        else
-        {
-            MoveValueText.gameObject.SetActive(false);
-        }
-
-        if (Input.GetKey(KeyCode.V))
-        {
-            this.gameObject.GetComponent<Collider2D>().isTrigger = true;
-            SetTransparency(0.3f);
-        }
-        else
-        {
-            this.gameObject.GetComponent<Collider2D>().isTrigger = false;
-            SetTransparency(1f);
-        }
-
-
+        
         if (Input.GetKey(moveUpKey))
         {
             spriteRenderer.sprite = playerBack;
@@ -231,18 +196,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void SetTransparency(float alpha)
-    {
-        playerRenderer = this.gameObject.transform.Find("GFX").GetComponent<Renderer>();
-        if (playerRenderer != null)
-        {
-            // Change the alpha value of the player's color
-            Color newColor = originalColor;
-            newColor.a = alpha;
-            playerRenderer.material.color = newColor;
-        }
-    }
-
 
     public void SetEquippedWeapon(GameObject weapon)
     {
@@ -267,13 +220,10 @@ public class PlayerMovement : MonoBehaviour
             invincible = true;
             Invoke("xes",0.5f);
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
 
-        
-        if (other.gameObject.tag=="curse")
+
+        if (other.gameObject.tag == "curse")
         {
             influence = other.gameObject.GetComponent<curse>().GetSender();
             Destroy(other.gameObject);
