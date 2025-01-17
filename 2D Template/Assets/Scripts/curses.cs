@@ -17,7 +17,7 @@ public class curses : MonoBehaviour
     void FixedUpdate()
     {
         GameObject avatar = GameObject.FindGameObjectWithTag("Player1");
-        if (Vector3.Distance(transform.position,avatar.transform.position)<15&&timer<=0) 
+        if (Vector2.Distance(transform.position,avatar.transform.position)<15&&timer<=0) 
         {
             timer = 150;
             GameObject newcurse = Instantiate(curse);
