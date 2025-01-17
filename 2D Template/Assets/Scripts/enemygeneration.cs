@@ -29,9 +29,11 @@ public class enemygeneration : MonoBehaviour
     {
         float enemies = enemylimit;
         float atckenemies = Mathf.Floor(enemies * UnityEngine.Random.Range(0.5f, 0.8f));
+        Debug.Log("ae: " + atckenemies);
+        Debug.Log("enemies: " + enemies);
         Vector3 spawn = new Vector3(transform.position.x - hspan / 2, transform.position.y + vspan / 2, 0); ;
         
-        while (spawn.y > transform.position.y - vspan / 2)
+        while (spawn.y > transform.position.y - vspan / 2&&enemies>0)
         {
             
             spawn += new Vector3(UnityEngine.Random.Range(minstep, maxstep), 0 , 0);
@@ -59,10 +61,6 @@ public class enemygeneration : MonoBehaviour
                 spawn -= new Vector3(0, UnityEngine.Random.Range(minstep, maxstep), 0);
             }
             newenemy.transform.position = spawn;
-            if (enemies == 0)
-            {
-                break;
-            }
         }
     }
 
