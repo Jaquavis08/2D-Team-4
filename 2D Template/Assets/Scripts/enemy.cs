@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 
 public class enemy : MonoBehaviour
 {
-    Transform target;
+    public Transform target;
     NavMeshAgent agent;
     float life=10;
     GameObject[] healers;
@@ -18,16 +18,11 @@ public class enemy : MonoBehaviour
     {
         sr= GetComponent<SpriteRenderer>();
 
-        target = GameObject.FindGameObjectWithTag("Player1").transform;
-        if (gameObject.tag=="enemy")
-        {
-
-
-            agent = GetComponent<NavMeshAgent>();
-            agent.updateRotation = false;
-            agent.updateUpAxis = false;
-            agent.Warp(transform.position);
-        }
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        agent.Warp(transform.position);
+        
     }
 
     private void Awake()
@@ -38,10 +33,10 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        target = GameObject.Find("Player").transform;
         healers = GameObject.FindGameObjectsWithTag("healer");
-        if (gameObject.tag=="enemy")
+        if (gameObject.tag != "healer")
         {
-
             agent.SetDestination(target.position);
         }
         if (gameObject.tag=="enemy")

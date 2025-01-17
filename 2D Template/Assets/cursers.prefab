@@ -116,7 +116,7 @@ Transform:
   m_LocalScale: {x: 0.26297408, y: 0.26297408, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1007044803074497322}
+  - {fileID: 3410983622253861309}
   - {fileID: 8905247594128772262}
   - {fileID: 7679167397254868712}
   - {fileID: 2391653304098493889}
@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e676839f60f7cdc4abeee0c1cebed3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   AmmoPrefab: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
 --- !u!114 &2310902246598431091
 MonoBehaviour:
@@ -735,7 +736,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1049146721406451527
+--- !u!1001 &3179773349404818896
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -749,19 +750,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249646914844943469, guid: 8200a05ff63f7a24fbe55010b2f808c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.0568001
+      value: 3.042672
       objectReference: {fileID: 0}
     - target: {fileID: 249646914844943469, guid: 8200a05ff63f7a24fbe55010b2f808c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10.783777
+      value: 9.988513
       objectReference: {fileID: 0}
     - target: {fileID: 249646914844943469, guid: 8200a05ff63f7a24fbe55010b2f808c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 249646914844943469, guid: 8200a05ff63f7a24fbe55010b2f808c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 249646914844943469, guid: 8200a05ff63f7a24fbe55010b2f808c4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -810,8 +811,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8200a05ff63f7a24fbe55010b2f808c4, type: 3}
---- !u!4 &1007044803074497322 stripped
+--- !u!4 &3410983622253861309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 249646914844943469, guid: 8200a05ff63f7a24fbe55010b2f808c4, type: 3}
-  m_PrefabInstance: {fileID: 1049146721406451527}
+  m_PrefabInstance: {fileID: 3179773349404818896}
   m_PrefabAsset: {fileID: 0}
