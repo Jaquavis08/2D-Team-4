@@ -25,19 +25,16 @@ public class enemygeneration : MonoBehaviour
     {
 
     }
-    public void Generate(float hspan, float vspan, int enemylimit)
+    public void Generate(float hspan, float vspan, int enemyLimit)
     {
-        float enemies = enemylimit;
+        float enemies = enemyLimit;
         float atckenemies = Mathf.Floor(enemies * UnityEngine.Random.Range(0.5f, 0.8f));
-        Debug.Log("ae: " + atckenemies);
-        Debug.Log("enemies: " + enemies);
-        Vector3 spawn = new Vector3(transform.position.x - hspan / 2, transform.position.y + vspan / 2, 0); ;
-        
+        Vector3 spawn = new Vector3(transform.position.x - hspan / 2, transform.position.y + vspan / 2, 0);
+
+        GameObject newenemy;
         while (spawn.y > transform.position.y - vspan / 2&&enemies>0)
         {
-            
             spawn += new Vector3(UnityEngine.Random.Range(minstep, maxstep), 0 , 0);
-            GameObject newenemy;
             if (atckenemies == 0)
             {
 
@@ -48,7 +45,7 @@ public class enemygeneration : MonoBehaviour
 
                 newenemy = Instantiate(attacknun);
             }
-
+            newenemy.transform.position = spawn;
             enemies -= 1;
             if (atckenemies > 0)
             {
@@ -60,7 +57,6 @@ public class enemygeneration : MonoBehaviour
                 spawn = new Vector3(transform.position.x - hspan / 2, spawn.y, 0);
                 spawn -= new Vector3(0, UnityEngine.Random.Range(minstep, maxstep), 0);
             }
-            newenemy.transform.position = spawn;
         }
     }
 
