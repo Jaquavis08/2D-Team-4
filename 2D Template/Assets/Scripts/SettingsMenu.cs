@@ -8,7 +8,8 @@ using System.Linq;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer audioixer;
+    public AudioSource audio;
+    public Slider VolumeS;
 
     public TMP_Dropdown resolutionDropdown;
 
@@ -40,9 +41,9 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();  
     }
 
-    public void SetVolume (float volume)
+    public void SetVolume()
     {
-        audioixer.SetFloat("Volume", volume);
+        audio.volume = VolumeS.value / 100;
     }
 
     public void SetQuality (int qualityIndex)

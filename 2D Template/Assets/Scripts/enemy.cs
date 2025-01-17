@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering.Universal;
+using TMPro;
 
 public class enemy : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class enemy : MonoBehaviour
     float life=10;
     GameObject[] healers;
     public GameObject AmmoPrefab;
+    public GameObject HitEffect;
+    public TMP_Text HitMarker;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,6 @@ public class enemy : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        
     }
 
     private void Awake()
@@ -53,9 +55,9 @@ public class enemy : MonoBehaviour
                 }
             }
         }
+        StartCoroutine(ShowHitEffect());
         Debug.Log(life);
     }
-
 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -63,6 +65,8 @@ public class enemy : MonoBehaviour
         if (other.gameObject.tag == "Bullet")
         {
             life -= 1;
+            HitMarker.text = "1";
+            StartCoroutine(ShowHitEffect());
         }
         if (life<=0) 
         {
@@ -76,6 +80,16 @@ public class enemy : MonoBehaviour
             print(randomValue);
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator ShowHitEffect()
+    {
+        print("!");
+        HitMarker.gameObject.SetActive(true);
+        HitEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        HitEffect.SetActive(false);
+        HitMarker.gameObject.SetActive(false);
     }
 
 }

@@ -43,7 +43,7 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))//Down
         {
-            if(MagAmount <= 0 && MagAmount < MaxMagAmount && Ammo > 0)
+            if(MagAmount <= 0 && MagAmount < MaxMagAmount) // && Ammo > 0
                 StartCoroutine(ReloadDelay());
             if (canShoot)
                 StartCoroutine(ShootDelay());
@@ -91,6 +91,14 @@ public class Shooting : MonoBehaviour
             int ammoToReload = Mathf.Min(ammoNeeded, Ammo);
             MagAmount += ammoToReload;
             Ammo -= ammoToReload;
+            canShoot = true;
+        }
+
+        if (isShooting == false && Ammo == 0f && MagAmount == 0f)
+        {
+            int ammoToReload = MaxMagAmount;
+            MagAmount += ammoToReload;
+            healthbar.Instance.Hurt(11);
             canShoot = true;
         }
     }

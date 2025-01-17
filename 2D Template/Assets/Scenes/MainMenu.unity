@@ -211,23 +211,23 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 915628792}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 915628795}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: SetVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 615581339}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsValueUpdater, Assembly-CSharp
         m_MethodName: SetValueText
         m_Mode: 0
@@ -758,8 +758,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21, y: -167.63}
-  m_SizeDelta: {x: 280.6464, y: 432.7343}
+  m_AnchoredPosition: {x: 29, y: -76}
+  m_SizeDelta: {x: 280.6464, y: 422.0931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83207781
 MonoBehaviour:
@@ -3342,7 +3342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcd0bb50da87e948b7ab10710603c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slider: {fileID: 4191956}
+  Slider: {fileID: 4191958}
   StartValue: 50
   ValueName: Volume
 --- !u!1 &635777859
@@ -3380,8 +3380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -248.95, y: -0.000020981}
-  m_SizeDelta: {x: 497.8995, y: 422.0931}
+  m_AnchoredPosition: {x: -308.61, y: -76}
+  m_SizeDelta: {x: 378.58, y: 422.0931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635777861
 MonoBehaviour:
@@ -4305,8 +4305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 274, y: 5.4413}
-  m_SizeDelta: {x: 447.2335, y: 411.2104}
+  m_AnchoredPosition: {x: 335.74, y: -76}
+  m_SizeDelta: {x: 323.7458, y: 422.0931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851267733
 MonoBehaviour:
@@ -4719,7 +4719,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b359c96af83b091499c18f532858aea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioixer: {fileID: 0}
+  audio: {fileID: 2059198964}
+  VolumeS: {fileID: 4191958}
   resolutionDropdown: {fileID: 1880411329}
 --- !u!1 &917184331
 GameObject:
@@ -12889,6 +12890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2059198965}
   - component: {fileID: 2059198964}
+  - component: {fileID: 2059198966}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -12908,7 +12910,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b913c727226177243814446c7e717384, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13007,6 +13009,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2059198966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059198963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5629f9f79e4fb4f4b909824cd4806015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2075287188
 GameObject:
   m_ObjectHideFlags: 0

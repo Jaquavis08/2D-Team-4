@@ -6,7 +6,7 @@ using TMPro;
 
 public class SettingsValueUpdater : MonoBehaviour
 {
-    public GameObject Slider;
+    public Slider Slider;
     public float StartValue;
     public string ValueName;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class SettingsValueUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameObject.GetComponent<TMP_Text>().SetText(ValueName + ": " + Slider.value + "%");
     }
     public void SetValueText(float sliderValue)
     {
