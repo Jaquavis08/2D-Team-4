@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private KeyCode moveUpKey = KeyCode.W;
     [SerializeField] private KeyCode moveDownKey = KeyCode.S;
+    public GameObject MoveSpeedValue;
 
     private bool MovementInvert = false;
 
@@ -85,7 +86,33 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.sprite = playerFront;
         }
 
-       
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            moveSpeed -= 1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            moveSpeed -= 1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            moveSpeed += 1f;
+        }
+
+        if(Input.GetKey(KeyCode.C))
+        {
+            MoveSpeedValue.GetComponent<TMP_Text>().text = moveSpeed.ToString();
+            MoveSpeedValue.SetActive(true);
+        }
+        else
+        {
+            MoveSpeedValue.SetActive(false);
+        }
+
+
+
         if (movement.magnitude > 1)
         {
             movement = movement.normalized;
