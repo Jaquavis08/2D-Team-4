@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D weaponRb;
     [SerializeField] private Sprite playerBack;
     [SerializeField] private Sprite playerFront;
-    [SerializeField] private GameObject playerGFX;
+    public GameObject playerGFX;
 
     [SerializeField] private Transform firepoint;
     [SerializeField] private Vector3 firepointOffset = new Vector3(-7.11f, 1.03f, 0);
@@ -220,13 +220,10 @@ public class PlayerMovement : MonoBehaviour
             invincible = true;
             Invoke("xes",0.5f);
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
 
-        
-        if (other.gameObject.tag=="curse")
+
+        if (other.gameObject.tag == "curse")
         {
             influence = other.gameObject.GetComponent<curse>().GetSender();
             Destroy(other.gameObject);

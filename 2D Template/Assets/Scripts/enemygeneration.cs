@@ -33,11 +33,8 @@ public class enemygeneration : MonoBehaviour
         
         while (spawn.y > transform.position.y - vspan / 2)
         {
+            
             spawn += new Vector3(UnityEngine.Random.Range(minstep, maxstep), 0 , 0);
-            if (spawn.x - transform.position.x > hspan / 2)
-            {
-                spawn = new Vector3(transform.position.x + hspan / 2, spawn.y, 0);
-            }
             GameObject newenemy;
             if (atckenemies == 0)
             {
@@ -56,11 +53,12 @@ public class enemygeneration : MonoBehaviour
                 Debug.Log("atckenemeies: " + atckenemies);
                 atckenemies -= 1;
             }
-            newenemy.transform.position = spawn;
-            if (spawn.x == transform.position.x + hspan / 2)
+            if (spawn.x >= transform.position.x + hspan / 2)
             {
-                spawn = new Vector3(transform.position.x - hspan / 2, spawn.y - UnityEngine.Random.Range(minstep, maxstep), 0);
+                spawn = new Vector3(transform.position.x - hspan / 2, spawn.y, 0);
+                spawn -= new Vector3(0, UnityEngine.Random.Range(minstep, maxstep), 0);
             }
+            newenemy.transform.position = spawn;
             if (enemies == 0)
             {
                 break;

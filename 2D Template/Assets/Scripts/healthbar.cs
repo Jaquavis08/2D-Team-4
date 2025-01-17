@@ -30,7 +30,7 @@ public class healthbar : MonoBehaviour
 
     IEnumerator PassiveHeal()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(15);
         Heal(5);
         StartCoroutine(PassiveHeal());
 

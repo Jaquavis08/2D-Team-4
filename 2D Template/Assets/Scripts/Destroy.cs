@@ -8,7 +8,6 @@ public class Destroy : MonoBehaviour
     {
         if (collision.gameObject.tag=="enemy"|| collision.gameObject.tag == "healer" || collision.gameObject.tag == "curser")
         {
-
             Destroy(this.gameObject);
         }
     }
@@ -17,9 +16,8 @@ public class Destroy : MonoBehaviour
     {
         if (collision.gameObject.tag!="Player1"&& collision.gameObject.tag !="Weapon")
         {
-            Destroy(this.gameObject);
 
+            Destroy(this.gameObject);
         }
     }
-
 }

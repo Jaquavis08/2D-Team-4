@@ -65,6 +65,7 @@ public class enemy : MonoBehaviour
         if (other.gameObject.tag == "Bullet")
         {
             life -= 1;
+            transform.GetChild(0).GetComponent<hitresponse>().hit();
         }
         if (life<=0) 
         {
