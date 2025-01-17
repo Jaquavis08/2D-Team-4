@@ -12,6 +12,7 @@ public class GunUpdater : MonoBehaviour
     public GameObject WeaponHolder;
     public GameObject Image;
     public Sprite Flashlight;
+    string infinitySymbol = "\u221E";
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class GunUpdater : MonoBehaviour
             if (WeaponHolder.GetComponentInChildren<SpriteRenderer>().gameObject.name == "Flashlight")
             {
                 Name.text = "Flashlight";
-                MagAndAmmo.text = "0/0";
+                MagAndAmmo.text = infinitySymbol + "/" + infinitySymbol;
                 Image.GetComponent<Image>().sprite = Flashlight;
             }
             else

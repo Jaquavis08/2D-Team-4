@@ -5,6 +5,7 @@ using TMPro;
 
 public class WeaponPickedup : MonoBehaviour
 {
+    public static WeaponPickedup Instance;
     public GameObject WeaponHolder;
     public KeyCode[] weaponSlots = { KeyCode.Alpha1, KeyCode.Alpha2 };
     public GameObject GunUi;
@@ -20,6 +21,20 @@ public class WeaponPickedup : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private List<GameObject> weapons = new List<GameObject>();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
 
     void Start()
     {
@@ -81,7 +96,7 @@ public class WeaponPickedup : MonoBehaviour
     void TryPickupAmmo(GameObject ammo)
     {
         float distance = Vector3.Distance(transform.position, ammo.transform.position);
-        if (distance <= 100f)
+        if (distance <= 5f)
         {
             print(distance);
             Shooting.Instance.Ammo += UnityEngine.Random.Range(5, 20);
@@ -134,6 +149,16 @@ public class WeaponPickedup : MonoBehaviour
 
         HidePickupPrompt();
         weaponInRange = null;
+    }
+
+    public void ClearWeaponHolder()
+    {
+        foreach (Transform child in WeaponHolder.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        weapons.Clear(); // Clear the weapon list to match the state of the weapon holder
     }
 
     void EquipWeaponBySlot(int slotIndex)

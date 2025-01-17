@@ -9,7 +9,10 @@ public class RandomRotation : MonoBehaviour
 
     // Start is called before the first frame update
 
+    private void Awake()
+    {
 
+    }
     void Start()
     {
         Object = this.gameObject;
