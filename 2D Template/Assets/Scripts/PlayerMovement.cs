@@ -103,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.C))
         {
-            MoveSpeedValue.GetComponent<TMP_Text>().text = moveSpeed.ToString();
+            MoveSpeedValue.GetComponent<TMP_Text>().text = "Speed = " + moveSpeed.ToString();
             MoveSpeedValue.SetActive(true);
         }
         else

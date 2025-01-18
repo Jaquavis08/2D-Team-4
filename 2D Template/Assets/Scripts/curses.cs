@@ -25,11 +25,19 @@ public class curses : MonoBehaviour
             Vector2 direction = avatar.transform.position - newcurse.transform.position;
             newcurse.GetComponent<Rigidbody2D>().AddForce(direction.normalized*500);
             newcurse.GetComponent<curse>().SetSender(gameObject);
+
+            StartCoroutine(DestroyCurseAfterDelay(newcurse, 5f));
         }
         else
         {
             timer -= 1;
         }
+    }
+
+    IEnumerator DestroyCurseAfterDelay(GameObject curseObject, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(curseObject);
     }
 
 }

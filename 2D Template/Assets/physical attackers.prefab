@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 8713828692957032978, guid: a668aa5034c38dd45911b28144941e86, type: 3}
+  maxLife: 5
   AmmoPrefab: {fileID: 8889105462880414594, guid: 78ccb726ea20f6a48a6a5d3f2dded39c, type: 3}
 --- !u!60 &5025673060448223802
 PolygonCollider2D:

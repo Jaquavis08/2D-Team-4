@@ -9,31 +9,29 @@ public class healthbar : MonoBehaviour
 {
     public static healthbar Instance;
 
-
-
-    float life;
-
     public float lifemax;
     public GameObject Player;
     public GameObject Pivot;
     public GameObject percent;
     public GameObject GameOver;
+
+    private float life;
     void Start()
     {
-        life = 100;
         life = lifemax;
         GameOver.SetActive(false);
-        life = 100;
-        life = lifemax;
         StartCoroutine(PassiveHeal());
     }
 
     IEnumerator PassiveHeal()
     {
-        yield return new WaitForSeconds(15);
-        Heal(5);
-        StartCoroutine(PassiveHeal());
+        while (true)
+        {
 
+            yield return new WaitForSeconds(15); // Heal every 15 seconds
+            if (life < lifemax)
+            Heal(1);
+        }
     }
 
     private void Awake()

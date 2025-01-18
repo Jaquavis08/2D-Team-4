@@ -9,10 +9,13 @@ public class enemy : MonoBehaviour
 {
     public Transform target;
     NavMeshAgent agent;
-    float life=10;
+    private float life;
+    public float maxLife;
     GameObject[] healers;
     public GameObject AmmoPrefab;
     SpriteRenderer sr;
+
+    private bool isHealing = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class enemy : MonoBehaviour
     private void Awake()
     {
             DontDestroyOnLoad(gameObject);
+        life = maxLife;
     }
 
     // Update is called once per frame
@@ -47,15 +51,23 @@ public class enemy : MonoBehaviour
                 if (Vector3.Distance(healer.transform.position, transform.position) < 10)
                 {
 
-                    if (life < 10)
+                    if (!isHealing && life < maxLife)
                     {
-
-                        life += 2;
+                        StartCoroutine(LifeUp());
                     }
                 }
             }
         }
         Debug.Log(life);
+    }
+
+    IEnumerator LifeUp()
+    {
+        isHealing = true; // Prevent overlapping healing
+        yield return new WaitForSeconds(0.35f); // Heal every second
+        life += 1;
+        life = Mathf.Clamp(life, 0, maxLife); // Ensure life doesn't exceed maxLife
+        isHealing = false;
     }
 
 
@@ -64,13 +76,14 @@ public class enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            life -= 1;
+            int randomV = Random.Range(1, 3);
+            life -= randomV;
             transform.GetChild(0).GetComponent<hitresponse>().hit();
         }
         if (life<=0) 
         {
             int randomValue = Random.Range(1, 5);
-            if (randomValue == 3)
+            if (randomValue >= 3)
             {
                 GameObject Ammo = Instantiate(AmmoPrefab, transform.position, Quaternion.identity);
                 Ammo.name = AmmoPrefab.name;

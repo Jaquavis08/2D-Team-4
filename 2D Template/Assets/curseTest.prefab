@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2595733101146602510}
   - component: {fileID: 4720557907127805900}
   - component: {fileID: 4720557907127805899}
+  - component: {fileID: 2019755630020601609}
   m_Layer: 0
   m_Name: curseTest
   m_TagString: curse
@@ -4854,3 +4855,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2019755630020601609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7556025190451737385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cf588d9c882114dae5ee6cb77ecdc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
