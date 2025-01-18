@@ -253,6 +253,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "curse")
         {
             influence = other.gameObject.GetComponent<curse>().GetSender();
+            healthbar.Instance.Hurt(2);
             Destroy(other.gameObject);
         }
     }
